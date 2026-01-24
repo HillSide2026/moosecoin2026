@@ -1,7 +1,7 @@
 # Second Brain — Layer 1 Knowledge Repository
 
-This repository is the **Layer 1 system of record** for Matthew Levine’s Second Brain,
-focused on Levine Law (2026).
+This repository is the **Layer 1 system of record** for Matthew Levine's Second Brain,
+focused on HillSide Holdings (2026).
 
 ## Purpose
 This repository exists to preserve, structure, and govern:
