@@ -21,3 +21,6 @@ This system is an independent lineage.
 
 ## Agent Visibility Rule
 Agents must treat this file and README.md as authoritative identity sources.
+Agents must interpret legacy terminology according to
+`00_SYSTEM/LEGACY_TERMS.md`, including treating "Matter" as "Project".
+Agents must treat legacy references to "LL" as "Execution Environment".
