@@ -1,4 +1,4 @@
-# System Definition
+# Second Brain — MooseCoin2026
 
 This directory defines how the Second Brain works.
 04_MATTERS holds live and historical matter files. It is operational memory, not doctrine.
