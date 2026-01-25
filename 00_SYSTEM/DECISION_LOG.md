@@ -114,6 +114,13 @@ This log records all system-level decisions affecting the Second Brain.
 **Artifacts impacted:** /00_SYSTEM/governance/agents/agent-write-guardrail.md, /00_SYSTEM/CLAUDE.md, /09_INBOX/_AGENT_OUTPUT/
 **Notes:** Agents may only write new files to 09_INBOX/_AGENT_OUTPUT/. All other directories are read-only. Agents must not rename, move, edit, overwrite, or delete files. Agents must not interact with external systems. Violations are P0 severity. Establishes foundation for proto-agent development.
 
+## 2026-01-24 — Declare FOLDER_MAP.md as structural source of truth
+
+**Decision:** FOLDER_MAP.md is the structural source of truth
+**Approved by:** ML1
+**Artifacts impacted:** /00_SYSTEM/FOLDER_MAP.md
+**Notes:** Repository structure declarations are governed by this file. Phase 3 alignment depends on this file; no structural changes executed in this step. Scope: repository structure declarations.
+
 ## 2026-01-23 — Deprecate 00_SYSTEM/AGENTS/
 
 **Decision:** Deprecated 00_SYSTEM/AGENTS/ directory; agent governance lives in 00_SYSTEM/governance/agents/, executable agents live in .claude/agents/

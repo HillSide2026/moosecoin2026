@@ -1,12 +1,14 @@
 # Folder Map
 
+This document describes the repository as it exists today (descriptive), not an aspirational target structure.
+
 ## 00_SYSTEM/
 **Purpose:** System governance and mechanics
 
-**Contents:**
-- Agents
-- Schemas
-- Governance rules
+**Structure:**
+- `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/)
+- `/audits/` — Structural and compliance audit reports
+- Key files: CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, MATTER_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
 
 **Rules:**
 - ML1 write-only
@@ -34,11 +36,7 @@
 **Purpose:** Procedural "how-to" guidance
 
 **Structure:**
-- `/ll-marketing-sales` — Marketing and sales workflows
-- `/ll-client` — Client-facing procedures
-- `/ll-solution` — Solution delivery workflows
-- `/admin` — Administrative procedures
-- `/secondary-business` — Non-core business workflows
+- (pending declaration — see Phase 3 Structural Diff Report)
 
 **Rules:**
 - Never source-of-truth
@@ -117,6 +115,7 @@
 
 **Structure:**
 - By topic domain
+- `/facts/` — Extracted facts from matters (by-matter/, by-topic/)
 
 **Rules:**
 - Reference-only
@@ -130,6 +129,7 @@
 
 **Structure:**
 - By reference type
+- `/external_systems/` — Non-binding external architectures and notes
 
 **Rules:**
 - Read-only
@@ -144,6 +144,7 @@
 **Structure:**
 - `/untriaged` — New, unprocessed items
 - `/triaged` — Processed, awaiting routing
+- `/_AGENT_OUTPUT/` — Agent write target (per GOV-2026-006)
 
 **Rules:**
 - Time-limited residence
@@ -162,3 +163,12 @@
 - Retains original authority status
 - Archive ≠ deprecated
 - Read-only
+
+---
+
+## Tooling (Not Structural)
+
+The following directories support tooling and are not part of the content structure:
+
+- `.claude/` — Claude Code agent definitions and settings
+- `.github/` — GitHub templates and workflows

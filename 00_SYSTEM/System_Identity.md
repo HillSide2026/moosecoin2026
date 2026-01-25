@@ -19,6 +19,12 @@ All agent interactions must derive context from files in this workspace.
 Hard fork derived from the Second Brain architecture.
 This system is an independent lineage.
 
+## External Reference Architectures
+External architectures may be referenced as non-binding inputs.
+No external system defines ML2 behavior or permissions.
+Explicit mapping and ML1 approval are required for any reuse.
+See: `00_SYSTEM/governance/External_Reference_Architectures.md`
+
 ## Agent Visibility Rule
 Agents must treat this file and README.md as authoritative identity sources.
 Agents must interpret legacy terminology according to
