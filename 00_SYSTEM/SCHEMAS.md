@@ -99,7 +99,7 @@ agents: { read: allow, write: deny }
 ```
 *Note: Template itself is source-of-truth; instantiated outputs are not.*
 
-### 04_MATTERS/
+### 04_PROJECTS/ (legacy: 04_MATTERS)
 ```yaml
 lifecycle: { folder_class: work }
 authority: { level: none, source_of_truth: false }
@@ -215,17 +215,17 @@ approval_status: draft | approved
 ---
 ```
 
-### Matter Schema
-For `/04_MATTERS/`:
+### Project Schema (legacy: Matter Schema)
+For `/04_PROJECTS/`:
 
-**Matter ID Format:** `##-###-#####`
-- First segment: Year matter was opened (2-digit)
-- Second segment: Client number within the firm (3-digit)
-- Third segment: Matter number for that client (5-digit)
+**Project ID Format:** `##-###-#####` (legacy: Matter ID)
+- First segment: Year project was opened (2-digit)
+- Second segment: Client number (3-digit)
+- Third segment: Project number for that client (5-digit)
 
-Example: `26-998-00001` = Year 2026, Client #998, Matter #1 for that client
+Example: `26-998-00001` = Year 2026, Client #998, Project #1 for that client
 
-**Matter Folder Naming:** `##-###-##### Client Name - Description`
+**Project Folder Naming:** `##-###-##### Client Name - Description`
 
 ```yaml
 ---
@@ -241,19 +241,19 @@ tags: []
 ---
 ```
 
-**Matter Internal Structure:**
+**Project Internal Structure:**
 
 ```
-04_MATTERS/{status}/
+04_PROJECTS/{status}/
 └── ##-###-##### Client Name - Description/
-    ├── 00_OVERVIEW.md        # Matter summary, parties, key dates
+    ├── 00_OVERVIEW.md        # Project summary, parties, key dates
     ├── 01_FACTS.md           # Factual record (non-normative)
     ├── 02_RECORDS/           # Source documents
     │   ├── 02_1_CLIENT_DOCUMENTS/
     │   └── 02_2_EMAILS/
-    ├── 03_ANALYSIS.md        # Legal/strategic analysis
+    ├── 03_ANALYSIS.md        # Strategic analysis
     ├── 04_ROADMAP.md         # Timeline, milestones, deliverables
-    ├── 05_OUTPUTS/           # Work product for this matter
+    ├── 05_OUTPUTS/           # Work product for this project
     └── 06_ACTIONS.md         # Current and pending action items
 ```
 

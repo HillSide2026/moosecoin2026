@@ -16,7 +16,7 @@ provenance:
 # Matter → Fact Extraction Protocol
 
 This document exists to:
-- Allow the system to identify and preserve **facts of record** from `04_MATTERS`
+- Allow the system to identify and preserve **facts of record** from `04_PROJECTS`
 - Prevent accidental elevation of facts into rules, guidance, or precedent
 - Enable retrieval and aggregation of facts **without normative force**
 

@@ -8,7 +8,7 @@ This document describes the repository as it exists today (descriptive), not an 
 **Structure:**
 - `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/)
 - `/audits/` — Structural and compliance audit reports
-- Key files: CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, MATTER_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
+- Key files: CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
 
 **Rules:**
 - ML1 write-only
@@ -61,19 +61,19 @@ This document describes the repository as it exists today (descriptive), not an 
 
 ---
 
-## 04_MATTERS/
-**Purpose:** Case- or project-specific work
+## 04_PROJECTS/
+**Purpose:** Project-specific work (legacy: Matter)
 
 **Structure:**
-- `/open/` — Active matters by priority
+- `/open/` — Active projects by priority
   - `/essential` — Highest priority
   - `/strategic` — Strategic importance
   - `/standard` — Normal priority
   - `/parked` — On hold
 - `/pending/` — Awaiting action or decision
-- `/closed/` — Completed matters
+- `/closed/` — Completed projects
 
-**Matter ID Format:** `##-###-#####`
+**Project ID Format:** `##-###-#####` (legacy: Matter ID)
 
 **Rules:**
 - Non-authoritative by default

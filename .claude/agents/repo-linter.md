@@ -1,6 +1,6 @@
 ---
 name: repo-linter
-description: Scans the repository for structural, schema, and naming violations against system rules in FOLDER_MAP.md and MATTER_SCHEMA.md. Produces a lint report to 09_INBOX/_AGENT_OUTPUT/.
+description: Scans the repository for structural, schema, and naming violations against system rules in FOLDER_MAP.md and PROJECT_SCHEMA.md. Produces a lint report to 09_INBOX/_AGENT_OUTPUT/.
 tools: Read, Glob, Grep, Bash, Write
 disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 ---
@@ -30,7 +30,7 @@ disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 Scan the repository against these authoritative references:
 
 - `00_SYSTEM/FOLDER_MAP.md` — Declared folder structure and rules
-- `00_SYSTEM/MATTER_SCHEMA.md` — Matter ID format, required files, required metadata, internal structure
+- `00_SYSTEM/PROJECT_SCHEMA.md` — Project ID format, required files, required metadata, internal structure
 - `00_SYSTEM/SCHEMAS.md` — YAML frontmatter requirements and folder defaults
 
 Read these files first. They define what "correct" looks like.
@@ -39,13 +39,13 @@ Read these files first. They define what "correct" looks like.
 
 ## Checks to Perform
 
-### 1. Matter ID Format
-- Inspect all directories under `04_MATTERS/` (recursively through `open/`, `pending/`, `closed/`).
-- Flag any matter folder whose name does not match the format: `##-###-##### Client Name - Description`
-- The numeric portion must match `##-###-#####` (2-digit year, 3-digit client, 5-digit matter).
+### 1. Project ID Format
+- Inspect all directories under `04_PROJECTS/` (recursively through `open/`, `pending/`, `closed/`).
+- Flag any project folder whose name does not match the format: `##-###-##### Name - Description`
+- The numeric portion must match `##-###-#####` (2-digit year, 3-digit sequence, 5-digit project).
 
-### 2. Required Matter Files / Metadata
-- For each matter folder, verify these required components exist:
+### 2. Required Project Files / Metadata
+- For each project folder, verify these required components exist:
   - `00_OVERVIEW.md`
   - `01_FACTS.md`
   - `02_RECORDS/` (with subdirectories `02_1_CLIENT_DOCUMENTS/`, `02_2_EMAILS/`)
@@ -55,13 +55,13 @@ Read these files first. They define what "correct" looks like.
   - `06_ACTIONS.md`
 - For files that exist, check for required YAML frontmatter fields: `id`, `title`, `client`, `owner`, `status`, `priority`, `created_date`, `last_updated`, `tags`
 
-### 3. Orphan Documents within Matters
-- Identify files inside a matter folder that do not map to the defined internal structure (00-06 components).
+### 3. Orphan Documents within Projects
+- Identify files inside a project folder that do not map to the defined internal structure (00-06 components).
 - Flag suspected orphans and explain why they were flagged.
 - If the schema does not define a clear rule for a file, label the finding as "heuristic" with lower confidence.
 
 ### 4. Reserved Folder Names
-- Verify all 11 top-level reserved folders exist: `00_SYSTEM`, `01_DOCTRINE`, `02_PLAYBOOKS`, `03_TEMPLATES`, `04_MATTERS`, `05_RUNS`, `06_OUTPUTS`, `07_RESEARCH`, `08_REFERENCE`, `09_INBOX`, `10_ARCHIVE`
+- Verify all 11 top-level reserved folders exist: `00_SYSTEM`, `01_DOCTRINE`, `02_PLAYBOOKS`, `03_TEMPLATES`, `04_PROJECTS`, `05_RUNS`, `06_OUTPUTS`, `07_RESEARCH`, `08_REFERENCE`, `09_INBOX`, `10_ARCHIVE`
 - Flag unexpected variations, typos, near-duplicates (case differences, hyphen/underscore drift).
 - Flag any unexpected top-level directories.
 
@@ -110,7 +110,7 @@ audience:
 
 A brief summary including:
 - Total findings count
-- Violation counts by type (matter_id, missing_files, missing_metadata, orphan, folder_name, unmapped)
+- Violation counts by type (project_id, missing_files, missing_metadata, orphan, folder_name, unmapped)
 - Severity distribution (P0 / P1 / P2 / Advisory)
 - One-line assessment of overall repo health
 

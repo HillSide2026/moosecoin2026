@@ -35,7 +35,7 @@ All directories are in scope for compliance checks:
 - `01_DOCTRINE/` — canon, binding
 - `02_PLAYBOOKS/` — canon, procedural
 - `03_TEMPLATES/` — canon, procedural
-- `04_MATTERS/` — work, non-authoritative
+- `04_PROJECTS/` — work, non-authoritative
 - `05_RUNS/` — event, immutable
 - `06_OUTPUTS/` — work
 - `07_RESEARCH/` — library
@@ -67,7 +67,7 @@ All directories are in scope for compliance checks:
 
 | Severity | Name | Description | Examples |
 |----------|------|-------------|----------|
-| **P0** | Critical | Authority breach; immediate risk of LL consuming invalid canon | `source_of_truth: true` in 04_MATTERS; `binding` authority in non-canon |
+| **P0** | Critical | Authority breach; immediate risk of LL consuming invalid canon | `source_of_truth: true` in 04_PROJECTS; `binding` authority in non-canon |
 | **P1** | Major | Canon integrity issue; blocks promotion or causes drift | Missing `provenance` on approved doctrine; orphaned file in canon |
 | **P2** | Minor | Metadata incomplete; no immediate authority risk | Missing optional tags; style deviation |
 
@@ -155,7 +155,7 @@ Quarantine isolates a violating artifact from LL consumption and canon use.
 - Adding `approved`/`approver` metadata solely to satisfy lint
 - Editing canon content without promotion
 - Changing `source_of_truth: true` outside canon folders
-- Setting `authority.level: binding` or `procedural` in 04_MATTERS
+- Setting `authority.level: binding` or `procedural` in 04_PROJECTS
 - Removing quarantine without ML1 approval
 - Closing P0 without ML1 sign-off
 
@@ -211,7 +211,7 @@ Changes to canon occur ONLY via the Gold Promotion Protocol:
 
 ## 10. Appendix: Example Scenarios
 
-### Scenario A: `source_of_truth: true` in 04_MATTERS
+### Scenario A: `source_of_truth: true` in 04_PROJECTS
 
 **Severity:** P0
 **Response:**

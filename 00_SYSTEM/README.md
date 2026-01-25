@@ -1,7 +1,7 @@
 # Second Brain — MooseCoin2026
 
 This directory defines how the Second Brain works.
-04_MATTERS holds live and historical matter files. It is operational memory, not doctrine.
+04_PROJECTS holds live and historical project files. It is operational memory, not doctrine.
 
 Anything in this folder governs:
 - structure

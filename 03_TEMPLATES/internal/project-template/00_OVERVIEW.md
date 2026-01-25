@@ -1,5 +1,5 @@
 ---
-id: {MATTER-ID}
+id: {PROJECT-ID}
 title: {CLIENT NAME} - {DESCRIPTION}
 client: {CLIENT NAME}
 owner: ML1
@@ -10,7 +10,7 @@ last_updated: {YYYY-MM-DD}
 tags: []
 ---
 
-# Matter Overview
+# Project Overview
 
 ## Parties
 
@@ -22,13 +22,13 @@ tags: []
 
 ## Scope
 
-{Brief description of matter scope and objectives}
+{Brief description of project scope and objectives}
 
 ## Key Dates
 
 | Date | Event |
 |------|-------|
-| | Matter opened |
+| | Project opened |
 | | |
 
 ## Practice Area

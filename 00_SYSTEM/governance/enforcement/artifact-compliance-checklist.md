@@ -39,7 +39,7 @@ For each artifact, verify YAML frontmatter includes:
 | 01_DOCTRINE | `effective_date`, `provenance.decided_by`, `provenance.decided_on` |
 | 02_PLAYBOOKS | `cites_doctrine` (may be empty) |
 | 03_TEMPLATES | `version`, `approval_status` |
-| 04_MATTERS | `priority` |
+| 04_PROJECTS | `priority` |
 | 05_RUNS | `triggered_by`, `related_matter` |
 | 06_OUTPUTS | `derived_from`, `audience.target` |
 
@@ -59,12 +59,12 @@ Verify `source_of_truth: true` appears ONLY in:
 
 ## 3. Authority Creep Check
 
-Verify `authority.level` in `04_MATTERS/`:
+Verify `authority.level` in `04_PROJECTS/`:
 
 - [ ] No file has `authority.level: binding`
 - [ ] No file has `authority.level: procedural`
 
-**Allowed values in 04_MATTERS:** `none` only (or omitted, inherits default)
+**Allowed values in 04_PROJECTS:** `none` only (or omitted, inherits default)
 
 ---
 
@@ -75,7 +75,7 @@ For any artifact with `ll_consumable: true`, verify:
 - [ ] File is in an LL-consumable folder (01_DOCTRINE, 03_TEMPLATES, 06_OUTPUTS)
 - [ ] OR file has explicit approval metadata
 
-**Violation:** `ll_consumable: true` in 00_SYSTEM, 04_MATTERS, 05_RUNS, 07_RESEARCH, 08_REFERENCE, 09_INBOX, 10_ARCHIVE without override justification
+**Violation:** `ll_consumable: true` in 00_SYSTEM, 04_PROJECTS, 05_RUNS, 07_RESEARCH, 08_REFERENCE, 09_INBOX, 10_ARCHIVE without override justification
 
 ---
 

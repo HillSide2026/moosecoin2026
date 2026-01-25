@@ -16,7 +16,7 @@ provenance:
 # Matter → Canon Extraction Doctrine
 
 This document exists to:
-- Preserve learning from `04_MATTERS`
+- Preserve learning from `04_PROJECTS`
 - Prevent folklore, precedent leakage, and shadow doctrine
 - Ensure no general rule, template, or playbook enters canon without explicit human judgment and approval
 
@@ -105,7 +105,7 @@ Extraction MUST first appear as one of:
 The only allowed flow:
 
 ```
-04_MATTERS (observation)
+04_PROJECTS (observation)
        ↓
    Extraction (human)
        ↓
@@ -231,7 +231,7 @@ An artifact lacking extraction provenance MUST NOT be promoted to canon. If disc
 **Correct response:**
 1. ML2 reviews and determines tactic is fact-dependent
 2. No extraction performed
-3. Matter remains in `04_MATTERS/closed/`
+3. Matter remains in `04_PROJECTS/closed/`
 4. No draft created
 5. Learning preserved in Matter but NOT elevated to canon
 

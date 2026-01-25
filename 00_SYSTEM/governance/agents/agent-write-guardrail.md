@@ -59,7 +59,7 @@ Agents **must not**:
 | Write to `01_DOCTRINE/` | Doctrine requires explicit ML1 approval |
 | Write to `02_PLAYBOOKS/` | Playbooks are canon, promotion-gated |
 | Write to `03_TEMPLATES/` | Templates are canon, promotion-gated |
-| Write to `04_MATTERS/` | Matters contain privileged work product |
+| Write to `04_PROJECTS/` | Matters contain privileged work product |
 | Write to `05_RUNS/` | Runs are immutable audit records |
 | Write to `06_OUTPUTS/` | Outputs require human review context |
 | Write to `07_RESEARCH/` | Research requires extraction protocol |

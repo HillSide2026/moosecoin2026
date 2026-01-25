@@ -172,7 +172,7 @@ Heuristic-based detection of folders being used inconsistently with their stated
 
 1. **File type mismatch:** Folder declares a purpose but contains unexpected file types (e.g., binary files in a markdown-only folder, code files in a doctrine folder)
 2. **Naming pattern drift:** Files in a folder don't follow naming conventions of siblings or schema expectations
-3. **Authority mismatch:** Files in a non-authoritative folder (`04_MATTERS/`, `09_INBOX/`) containing `source_of_truth: true` or `authority.level: binding` in frontmatter
+3. **Authority mismatch:** Files in a non-authoritative folder (`04_PROJECTS/`, `09_INBOX/`) containing `source_of_truth: true` or `authority.level: binding` in frontmatter
 4. **Orphan depth:** Files nested more than 2 levels deeper than the declared structure without schema justification
 5. **Likely renames:** Two paths that look like before/after versions of the same folder (edit distance, shared prefix, one empty + one populated)
 

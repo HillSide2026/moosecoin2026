@@ -1,6 +1,6 @@
 ---
 name: inbox-triage
-description: Scans all items in 09_INBOX/ and produces a triage report proposing destinations, matter IDs, and filenames for each item. Writes report to 09_INBOX/_AGENT_OUTPUT/.
+description: Scans all items in 09_INBOX/ and produces a triage report proposing destinations, project IDs, and filenames for each item. Writes report to 09_INBOX/_AGENT_OUTPUT/.
 tools: Read, Glob, Grep, Bash, Write
 disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 ---
@@ -38,7 +38,7 @@ This agent does **not** move files. It produces advisory recommendations only.
 Use these authoritative references to determine correct routing:
 
 - `00_SYSTEM/FOLDER_MAP.md` — Declared folder structure, purposes, and rules
-- `00_SYSTEM/MATTER_SCHEMA.md` — Matter ID format, required structure
+- `00_SYSTEM/PROJECT_SCHEMA.md` — Project ID format, required structure
 - `00_SYSTEM/SCHEMAS.md` — YAML frontmatter requirements and folder defaults
 - `01_DOCTRINE/DOCTRINE-2026-003-promotion-rules.md` — Promotion lifecycle (Inbox → Research → Doctrine)
 
@@ -62,7 +62,7 @@ For each item found, produce a triage recommendation.
 For each inbox item, determine:
 
 1. **Destination folder** — Where should this item go? Valid destinations:
-   - `04_MATTERS/open/{priority}/` — If it's case/project-specific work
+   - `04_PROJECTS/open/{priority}/` — If it's project-specific work
    - `07_RESEARCH/` — If it's exploratory, analytical, or reference-quality material
    - `08_REFERENCE/` — If it's an external/static source
    - `01_DOCTRINE/` — Only if it's a proposed doctrine (requires ML1 promotion approval)
@@ -72,7 +72,7 @@ For each inbox item, determine:
    - `DELETE` — If it appears to be noise, duplicate, or empty
    - `NEEDS_CONTEXT` — If you cannot determine routing without more information
 
-2. **Matter ID** — If routing to `04_MATTERS/`, propose the matter ID (`##-###-#####`) if determinable from content, or `UNASSIGNED` if not.
+2. **Project ID** — If routing to `04_PROJECTS/`, propose the project ID (`##-###-#####`) if determinable from content, or `UNASSIGNED` if not.
 
 3. **Normalized filename** — Propose a filename that follows the conventions of the destination folder.
 
@@ -136,7 +136,7 @@ For each inbox item, a block:
 | Field | Value |
 |-------|-------|
 | **Proposed destination** | `{destination folder path}` |
-| **Matter ID** | `{##-###-#####}` or `UNASSIGNED` |
+| **Project ID** | `{##-###-#####}` or `UNASSIGNED` |
 | **Proposed filename** | `{normalized-filename.md}` |
 | **Confidence** | High / Med / Low |
 
@@ -145,10 +145,10 @@ For each inbox item, a block:
 
 ### Section 4: Draft Stubs (Optional)
 
-If useful, generate draft stub files for items being routed to Matters. These are written as separate files to `09_INBOX/_AGENT_OUTPUT/` with the naming convention:
+If useful, generate draft stub files for items being routed to Projects. These are written as separate files to `09_INBOX/_AGENT_OUTPUT/` with the naming convention:
 
 ```
-DRAFT__MATTER_NOTE__{matter-id}__{short-title}.md
+DRAFT__PROJECT_NOTE__{project-id}__{short-title}.md
 ```
 
 Each stub must include frontmatter:
