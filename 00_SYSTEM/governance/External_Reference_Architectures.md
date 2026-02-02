@@ -1,3 +1,17 @@
+---
+id: GOVERNANCE-EXTERNAL-REFERENCE-ARCHITECTURES
+title: External Reference Architectures
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [governance, references]
+provenance:
+  decided_by: ML1
+  decided_on: 2026-01-22
+  context: Defines constraints on external reference architectures.
+---
+
 # External Reference Architectures
 
 ## Definition

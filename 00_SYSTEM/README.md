@@ -1,4 +1,3 @@
----
 id: SYSTEM-README-001
 title: Second Brain — MooseCoin2026
 owner: ML1
@@ -20,4 +19,8 @@ Anything in this folder governs:
 - decision provenance
 - change control
 
+Doctrine backlog lives at `00_SYSTEM/BACKLOG_DOCTRINE.md`.
+
 No content outside this folder may contradict rules defined here.
+Changes to /00_SYSTEM must include a release note using the template in
+`00_SYSTEM/RELEASES/TEMPLATE_RELEASE_NOTE.md`.

@@ -1,6 +1,23 @@
+---
+id: SCHEMA-CORE-001
+title: Artifact Schemas
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [schemas, metadata]
+---
+
 # Artifact Schemas
 
 All markdown files in this repository MUST begin with YAML frontmatter.
+
+## Schema Gate (Frontmatter Enforcement)
+
+The repo-wide gate runs `00_SYSTEM/tools/check_frontmatter.py` against tracked
+markdown files. It fails when frontmatter is missing and prints:
+“Missing YAML frontmatter. Add a frontmatter block per 00_SYSTEM/SCHEMAS.md.”
+There are no frontmatter exemptions unless explicitly listed here.
 
 ---
 
@@ -32,7 +49,7 @@ How much the artifact can govern behavior.
 Can this artifact define truth for the system?
 
 - `true` — Only for canon artifacts that can be cited as "this is the rule/template"
-- `false` — Everything else (including Matters)
+- `false` — Everything else (including Projects; legacy: Matters)
 
 ### D. audience.scope
 Who may consume this artifact.
@@ -259,14 +276,14 @@ tags: []
 
 | File/Folder | Purpose |
 |-------------|---------|
-| `00_OVERVIEW.md` | Matter summary, parties, scope, key dates |
+| `00_OVERVIEW.md` | Project summary, parties, scope, key dates |
 | `01_FACTS.md` | Chronological factual record (non-normative) |
 | `02_RECORDS/` | Source documents and communications |
 | `02_1_CLIENT_DOCUMENTS/` | Documents received from or sent to client |
 | `02_2_EMAILS/` | Email correspondence |
 | `03_ANALYSIS.md` | Legal analysis, risk assessment, strategy |
 | `04_ROADMAP.md` | Timeline, milestones, deliverables schedule |
-| `05_OUTPUTS/` | Work product generated for this matter |
+| `05_OUTPUTS/` | Work product generated for this project |
 | `06_ACTIONS.md` | Current and pending action items |
 
 ### Run Schema
@@ -280,7 +297,7 @@ status: started | completed | failed
 created_date: YYYY-MM-DD
 completed_date: YYYY-MM-DD | null
 triggered_by: ML1 | agent | scheduled
-related_matter: matter-id | null
+related_project: project-id | null   # legacy: matter-id
 inputs: []
 outputs: []
 ---

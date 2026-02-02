@@ -1,3 +1,13 @@
+---
+id: SYSTEM-BOOT-INSTRUCTIONS
+title: Second Brain — System Boot Instructions
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [boot, system]
+---
+
 # Second Brain — System Boot Instructions
 
 This repository is a Second Brain system.

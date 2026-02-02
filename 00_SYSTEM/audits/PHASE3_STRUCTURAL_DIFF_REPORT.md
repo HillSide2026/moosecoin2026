@@ -1,3 +1,13 @@
+---
+id: AUDIT-PHASE3-STRUCTURAL-DIFF
+title: Phase 3 Structural Diff Report
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [audit, phase3]
+---
+
 # Phase 3 Structural Diff Report
 
 **Date:** 2026-01-24
@@ -36,7 +46,7 @@ Items present in actual tree but not mentioned in FOLDER_MAP.md:
 | `00_SYSTEM/DECISION_LOG.md` | Decision provenance log |
 | `00_SYSTEM/GLOSSARY.md` | Term definitions |
 | `00_SYSTEM/LEGACY_TERMS.md` | Legacy terminology mappings |
-| `00_SYSTEM/MATTER_SCHEMA.md` | Matter/Project schema |
+| `00_SYSTEM/MATTER_SCHEMA.md` | Project schema (legacy: Matter) |
 | `00_SYSTEM/REFRACTOR_PLAN_04_MATTERS_TO_04_PROJECTS.md` | Refactor plan (design only) |
 | `00_SYSTEM/SCHEMAS.md` | Schema index |
 | `00_SYSTEM/SYSTEM_BACKLOG.md` | System-level backlog |

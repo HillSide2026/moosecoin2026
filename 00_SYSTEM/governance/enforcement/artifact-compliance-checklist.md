@@ -40,7 +40,7 @@ For each artifact, verify YAML frontmatter includes:
 | 02_PLAYBOOKS | `cites_doctrine` (may be empty) |
 | 03_TEMPLATES | `version`, `approval_status` |
 | 04_PROJECTS | `priority` |
-| 05_RUNS | `triggered_by`, `related_matter` |
+| 05_RUNS | `triggered_by`, `related_project` |
 | 06_OUTPUTS | `derived_from`, `audience.target` |
 
 ---
