@@ -1,3 +1,13 @@
+---
+id: REF-IWO-SZAPAR-SECOND-BRAIN
+title: External Reference: Iwo Szapar Second Brain
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [reference, external]
+---
+
 # External Reference: Iwo Szapar Second Brain
 
 ## What It Is

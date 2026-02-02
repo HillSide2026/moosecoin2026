@@ -1,3 +1,15 @@
+---
+id: TEMPLATES-README
+title: Templates
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [templates]
+version: "1.0"
+approval_status: approved
+---
+
 # Templates
 
 Reusable document templates.

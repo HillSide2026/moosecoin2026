@@ -1,3 +1,13 @@
+---
+id: SYSTEM-FOLDER-MAP
+title: Folder Map
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [structure, folders]
+---
+
 # Folder Map
 
 This document describes the repository as it exists today (descriptive), not an aspirational target structure.
@@ -62,7 +72,7 @@ This document describes the repository as it exists today (descriptive), not an 
 ---
 
 ## 04_PROJECTS/
-**Purpose:** Project-specific work (legacy: Matter)
+**Purpose:** Project-specific work
 
 **Structure:**
 - `/open/` — Active projects by priority
@@ -81,6 +91,10 @@ This document describes the repository as it exists today (descriptive), not an 
 - High agent access, low authority
 
 ---
+
+## Legacy Aliases
+
+- Matter → Project (legacy only; do not use for new work)
 
 ## 05_RUNS/
 **Purpose:** Audit and execution records
@@ -115,7 +129,7 @@ This document describes the repository as it exists today (descriptive), not an 
 
 **Structure:**
 - By topic domain
-- `/facts/` — Extracted facts from matters (by-matter/, by-topic/)
+- `/facts/` — Extracted facts from projects (by-project/, by-topic/)
 
 **Rules:**
 - Reference-only
