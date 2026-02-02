@@ -1,3 +1,13 @@
+---
+id: SYSTEM-README-001
+title: Second Brain — MooseCoin2026
+owner: ML1
+status: approved
+created_date: 2026-01-04
+last_updated: 2026-01-24
+tags: [system, governance, readme]
+---
+
 # Second Brain — MooseCoin2026
 
 This directory defines how the Second Brain works.
