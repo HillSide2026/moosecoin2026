@@ -1,3 +1,13 @@
+---
+id: ARCHIVE-REFACTOR-04-MATTERS-TO-PROJECTS
+title: Refactor Plan — 04_MATTERS → 04_PROJECTS (Design Only)
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [archive, refactor]
+---
+
 # Refactor Plan — 04_MATTERS → 04_PROJECTS (Design Only)
 
 ## Objective

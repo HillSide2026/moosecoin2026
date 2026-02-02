@@ -1,3 +1,13 @@
+---
+id: SYSTEM-DECISION-LOG
+title: Decision Log
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-01-22
+tags: [decisions, governance]
+---
+
 # Decision Log
 
 This log records all system-level decisions affecting the Second Brain.
@@ -127,4 +137,3 @@ This log records all system-level decisions affecting the Second Brain.
 **Approved by:** ML1
 **Artifacts impacted:** /00_SYSTEM/CLAUDE.md, /00_SYSTEM/AGENTS/ (removed)
 **Notes:** The directory created ambiguity between governance (rules about agents) and runtime (agent definitions Claude discovers). Canonical doctrine path: 00_SYSTEM/governance/agents/. Runtime path: .claude/agents/. No files existed in the deprecated directory.
-
