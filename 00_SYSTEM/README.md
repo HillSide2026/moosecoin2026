@@ -10,4 +10,6 @@ Anything in this folder governs:
 - decision provenance
 - change control
 
+Doctrine backlog lives at `00_SYSTEM/BACKLOG_DOCTRINE.md`.
+
 No content outside this folder may contradict rules defined here.
