@@ -1,3 +1,4 @@
+---
 id: SYSTEM-README-001
 title: Second Brain — MooseCoin2026
 owner: ML1
