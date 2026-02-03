@@ -13,13 +13,9 @@ tags: [actions, project-manager]
 ## Active Action Items
 
 - [ ] Confirm project sponsor and stage gate owner.
-  - Proposed owner: ML1
-  - Proposed due date: no due date
-- [ ] Draft initial success metrics for the Identify stage.
-  - Proposed owner: ML1
-  - Proposed due date: no due date
+- [ ] Draft initial success metrics for the Initiate (Identify) stage.
 
-## Backlog (Stage 3)
+## Execute (Backlog) — Stage 3
 
 - [ ] Define prioritization rubric (impact, effort, dependency).
   - Proposed owner: ML1
@@ -31,11 +27,9 @@ tags: [actions, project-manager]
   - Proposed owner: ML1
   - Proposed due date: no due date
 
-## Next Steps / Next Sprint
+## Close (Next Steps / Next Sprint) — Stage 4
 
-- [ ] Host Stage 1 (Identify) workshop.
-  - Proposed owner: ML1
-  - Proposed due date: no due date
+- [ ] Host Stage 1 (Initiate/Identify) workshop.
 - [ ] Publish the first roadmap draft for review.
   - Proposed owner: ML1
   - Proposed due date: no due date
