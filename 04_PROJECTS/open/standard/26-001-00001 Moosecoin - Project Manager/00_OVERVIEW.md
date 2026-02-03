@@ -22,7 +22,7 @@ tags: [project-manager, delivery]
 
 ## Scope
 
-Create a project manager framework that drives delivery through four stages: Identify, Roadmap, Backlog, and Next Steps/Next Sprints.
+Create a project manager framework that drives delivery through four stages: Initiate, Plan, Execute, and Close. Each stage uses the skills and tasks sequence of Identify → Roadmap → Backlog → Next Steps/Next Sprints.
 
 ## Key Dates
 
@@ -47,4 +47,4 @@ Create a project manager framework that drives delivery through four stages: Ide
 
 ## Status Summary
 
-Project initiated to establish a four-stage project management flow (Identify → Roadmap → Backlog → Next Steps/Next Sprints).
+Project initiated to establish a four-stage project management flow (Initiate → Plan → Execute → Close) anchored by the skills/tasks sequence Identify → Roadmap → Backlog → Next Steps/Next Sprints.

@@ -10,7 +10,7 @@ tags: [roadmap, project-manager]
 
 # Roadmap
 
-## Stage 1 — Identify
+## Stage 1 — Initiate (Identify)
 
 **Goal:** Define the project mandate and success criteria.
 
@@ -23,7 +23,7 @@ tags: [roadmap, project-manager]
 - Stage 1 kickoff complete
 - Stage 1 outputs approved
 
-## Stage 2 — Roadmap
+## Stage 2 — Plan (Roadmap)
 
 **Goal:** Translate the mandate into a sequenced plan.
 
@@ -36,7 +36,7 @@ tags: [roadmap, project-manager]
 - Roadmap draft complete
 - Roadmap review and sign-off
 
-## Stage 3 — Backlog
+## Stage 3 — Execute (Backlog)
 
 **Goal:** Build the prioritized work queue.
 
@@ -49,7 +49,7 @@ tags: [roadmap, project-manager]
 - Initial backlog populated
 - Prioritization rubric approved
 
-## Stage 4 — Next Steps / Next Sprints
+## Stage 4 — Close (Next Steps / Next Sprints)
 
 **Goal:** Commit to the next execution window.
 

@@ -18,4 +18,5 @@ tags: [facts, project-manager]
 
 ## Key Facts
 
-- The project manager must support four stages: Identify, Roadmap, Backlog, and Next Steps/Next Sprints.
+- The project manager must support four stages: Initiate, Plan, Execute, and Close.
+- The skills and tasks sequence remains Identify → Roadmap → Backlog → Next Steps/Next Sprints.

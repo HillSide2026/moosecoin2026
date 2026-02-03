@@ -13,17 +13,17 @@ tags: [actions, project-manager]
 ## Active Action Items
 
 - [ ] Confirm project sponsor and stage gate owner.
-- [ ] Draft initial success metrics for the Identify stage.
+- [ ] Draft initial success metrics for the Initiate (Identify) stage.
 
-## Backlog (Stage 3)
+## Execute (Backlog) — Stage 3
 
 - [ ] Define prioritization rubric (impact, effort, dependency).
 - [ ] Create backlog intake template.
 - [ ] Establish grooming cadence and owner.
 
-## Next Steps / Next Sprint
+## Close (Next Steps / Next Sprint) — Stage 4
 
-- [ ] Host Stage 1 (Identify) workshop.
+- [ ] Host Stage 1 (Initiate/Identify) workshop.
 - [ ] Publish the first roadmap draft for review.
 - [ ] Schedule weekly execution check-ins.
 
