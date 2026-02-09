@@ -4,7 +4,7 @@ title: Agent Write Guardrail
 owner: ML1
 status: approved
 created_date: 2026-01-23
-last_updated: 2026-01-23
+last_updated: 2026-02-09
 effective_date: 2026-01-23
 tags: [agents, permissions, guardrails, non-negotiable]
 provenance:
@@ -29,6 +29,14 @@ This instruction applies to:
 
 operating in this repository, regardless of invocation method or authority context.
 
+### Explicitly Approved Agents (Carve-Outs)
+
+The following agents are explicitly approved (i.e., **not** proto-agents) and may operate under the exceptions defined in Section 2A:
+
+- `project-manager`
+- `moosecoin2026_system_architect`
+- `moosecoin_trading_strategist`
+
 ---
 
 ## 2. Write Permissions
@@ -42,6 +50,28 @@ Agents may write files **only** to the following directory:
 - If the directory does not exist, the agent may create it once.
 - No other directories are writable by agents.
 - All agent-created files MUST be new files. Appending to or overwriting existing files is prohibited.
+
+## 2A. Approved Agent Exceptions
+
+The explicitly approved agents listed in Section 1 may operate under the following exceptions. All other rules in this guardrail remain in force.
+
+### `project-manager`
+
+- May write new files within `04_PROJECTS/**` for project-local maintenance.
+- May edit and overwrite existing files within `04_PROJECTS/**`.
+- All writes outside `04_PROJECTS/**` remain restricted to `09_INBOX/_AGENT_OUTPUT/` only.
+
+### `moosecoin2026_system_architect`
+
+- May write new files within `04_PROJECTS/**`.
+- May edit and overwrite existing files within `04_PROJECTS/**`.
+- All writes outside `04_PROJECTS/**` remain restricted to `09_INBOX/_AGENT_OUTPUT/` only.
+
+### `moosecoin_trading_strategist`
+
+- May write new files within `04_PROJECTS/**`.
+- May edit and overwrite existing files within `04_PROJECTS/**`.
+- All writes outside `04_PROJECTS/**` remain restricted to `09_INBOX/_AGENT_OUTPUT/` only.
 
 ---
 
@@ -59,7 +89,7 @@ Agents **must not**:
 | Write to `01_DOCTRINE/` | Doctrine requires explicit ML1 approval |
 | Write to `02_PLAYBOOKS/` | Playbooks are canon, promotion-gated |
 | Write to `03_TEMPLATES/` | Templates are canon, promotion-gated |
-| Write to `04_PROJECTS/` | Projects contain privileged work product |
+| Write to `04_PROJECTS/` | Projects contain privileged work product (see Section 2A for approved exceptions) |
 | Write to `05_RUNS/` | Runs are immutable audit records |
 | Write to `06_OUTPUTS/` | Outputs require human review context |
 | Write to `07_RESEARCH/` | Research requires extraction protocol |

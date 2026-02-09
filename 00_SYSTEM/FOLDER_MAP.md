@@ -4,7 +4,7 @@ title: Folder Map
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-01-22
+last_updated: 2026-02-09
 tags: [structure, folders]
 ---
 
@@ -17,8 +17,9 @@ This document describes the repository as it exists today (descriptive), not an 
 
 **Structure:**
 - `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/)
+- `/governance/agents/AGENT_REGISTRY.md` — Canonical executable agent registry
 - `/audits/` — Structural and compliance audit reports
-- Key files: CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
+- Key files: AGENT_REGISTRY.md, CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
 
 **Rules:**
 - ML1 write-only
@@ -62,7 +63,6 @@ This document describes the repository as it exists today (descriptive), not an 
 - `/documents` — Document templates
 - `/internal` — Internal-use templates
 - `/checklists` — Checklist templates
-- `/snippets` — Reusable text fragments
 
 **Rules:**
 - Authoritative only as templates
@@ -75,13 +75,12 @@ This document describes the repository as it exists today (descriptive), not an 
 **Purpose:** Project-specific work
 
 **Structure:**
-- `/open/` — Active projects by priority
-  - `/essential` — Highest priority
-  - `/strategic` — Strategic importance
-  - `/standard` — Normal priority
-  - `/parked` — On hold
-- `/pending/` — Awaiting action or decision
-- `/closed/` — Completed projects
+- Projects are stored directly under `04_PROJECTS/` using the Project ID format.
+- Standard (optional) stage subfolders:
+  - `01_INITIATION DOCUMENTATION/`
+  - `02_PLANNING DOCUMENTATION/`
+  - `03_EXECUTION DOCUMENTATION/`
+  - `04_CLOSING DOCUMENTATION/`
 
 **Project ID Format:** `##-###-#####` (legacy: Matter ID)
 
@@ -100,7 +99,7 @@ This document describes the repository as it exists today (descriptive), not an 
 **Purpose:** Audit and execution records
 
 **Structure:**
-- `/YYYY/MM/run-id/` — Organized by year and month
+- `/YYYY/MM/run-id/` — Organized by year and month (created when runs exist)
 
 **Rules:**
 - Immutable

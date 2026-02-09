@@ -1,26 +1,26 @@
 ---
 id: SCHEMA-PROJECT-001
-title: Project Schema (legacy: Matter Schema)
+title: Project Schema
 owner: ML1
 status: approved
 created_date: 2026-01-21
-last_updated: 2026-01-24
+last_updated: 2026-02-03
 tags: [schema, projects, structure]
 ---
 
-# Project Schema (legacy: Matter)
+# Project Schema
 
 Defines the structure, contents, and constraints for artifacts in `04_PROJECTS/`.
 
 ---
 
-## Authority Status
+## 1. Authority Status
 
 ```yaml
 lifecycle: { folder_class: work }
 authority: { level: none, source_of_truth: false }
 audience: { scope: ml2_internal, ll_consumable: false }
-agents: { read: allow, write: allow }
+agents: { read: allow, write: allow, edit: allow }
 ```
 
 **Projects are non-authoritative by definition.** They cannot:
@@ -31,273 +31,276 @@ agents: { read: allow, write: allow }
 
 ---
 
-## Project ID Format (legacy: Matter ID)
+## 2. Project Location
 
-`##-###-#####`
-
-| Segment | Meaning | Example |
-|---------|---------|---------|
-| First (2 digits) | Year project was opened | `26` = 2026 |
-| Second (3 digits) | Client number | `998` = 998th client |
-| Third (5 digits) | Project number for that client | `00001` = 1st project |
-
-**Full example:** `26-998-00001` = Year 2026, Client #998, Project #1 for that client
-
----
-
-## Project Folder Naming
-
-```
-##-###-##### Client Name - Description
-```
-
-**Example:** `26-001-00001 Acme Corp - Website Redesign`
-
----
-
-## Project Location
+Projects are stored directly under `04_PROJECTS/`:
 
 ```
 04_PROJECTS/
-├── open/
-│   ├── essential/
-│   ├── strategic/
-│   ├── standard/
-│   └── parked/
-├── pending/
-└── closed/
+├── 26-001-00001 MooseCoin - Formalize Trading Strategy/
+├── 26-001-00002 MooseCoin - Trading Platform Selection/
+└── 26-001-00003 MooseCoin - Website Development/
 ```
 
-Projects are organized by `status` and `priority` (delivery status).
+No intermediary folders (no `open/`, `pending/`, `closed/` subfolders).
 
 ---
 
-## Project Frontmatter
+## 3. Project Folder Naming
+
+```
+YY-CCC-NNNNN Client Name - Description
+```
+
+**Example:** `26-001-00001 MooseCoin - Formalize Trading Strategy`
+
+---
+
+## 4. Project ID Format
+
+`YY-CCC-NNNNN`
+
+| Segment | Meaning | Example |
+|---------|---------|---------|
+| `YY` | Two-digit year | `26` = 2026 |
+| `CCC` | Client number (three digits) | `001` = 1st client |
+| `NNNNN` | Sequential project number (five digits, zero-padded) | `00001` = 1st project |
+
+**Full example:** `26-001-00001` = Year 2026, Client #001, Project #1
+
+---
+
+## 5. Lifecycle Model (4 Stages)
+
+Projects use a **standard 4-stage lifecycle**:
+
+1. **Initiation**
+2. **Planning**
+3. **Execution**
+4. **Closing**
+
+### 5.1 Stage Semantics
+
+- Agents may:
+  - Infer and *recommend* stage classification
+  - Never *advance* a stage without explicit ML1 instruction
+- Advancement requires ML1 approval.
+- Each stage has an exit gate controlled by ML1.
+
+### 5.2 Stage Definitions
+
+| Stage | Purpose | Key Outputs | Exit Criteria |
+|-------|---------|-------------|---------------|
+| **Initiation** | Define scope, objectives, constraints | Charter, Scope Boundaries, Definitions | ML1 approval to proceed |
+| **Planning** | Design structure, standards, execution plan | Document schema, review cadence, acceptance criteria | ML1 approval to proceed |
+| **Execution** | Execute work while monitoring for drift | Draft artifacts, issue logs, consistency checks | ML1 approval to proceed |
+| **Closing** | Validate and finalize deliverables | Approved artifacts, archived materials, transition notes | ML1 sign-off |
+
+---
+
+## 6. Internal Structure (Standard Stage Folders)
+
+Projects may use the following **standard stage subfolders**. These are **formalized** and permitted, but **not required**.
+
+```
+01_INITIATION DOCUMENTATION/
+02_PLANNING DOCUMENTATION/
+03_EXECUTION DOCUMENTATION/
+04_CLOSING DOCUMENTATION/
+```
+
+Rules:
+- If these folders are used, the names must match exactly.
+- Additional subfolders are allowed when clearly scoped to the project and not in conflict with system structure.
+
+---
+
+## 7. Required Project Files (Minimum Viable Project)
+
+There is **no required file set** for projects. If present, files must follow the metadata rules below.
+
+---
+
+## 8. Required Metadata (Frontmatter)
+
+Each project file MUST include YAML frontmatter.
+
+### 00_OVERVIEW.md Frontmatter (Canonical)
+
+`00_OVERVIEW.md` MUST use the `project:` block schema below. Legacy top‑level fields are deprecated.
 
 ```yaml
 ---
-id: ##-###-#####
-title: {Client Name} - {Description}
-client: {Client Name}
-owner: ML1
-status: open | pending | closed
-priority: essential | strategic | standard | parked
+project:
+  id: YY-CCC-NNNNN
+  title: Client Name - Description
+  stage: initiation | planning | execution | closing
+  status: in_progress | blocked | paused | waiting_ml1
+owner:
+  ml1: ML1
 created_date: YYYY-MM-DD
 last_updated: YYYY-MM-DD
+dependencies:
+  depends_on: []
+  blocks: []
 tags: []
 ---
 ```
 
 ---
 
-## Internal Structure
+## 9. Project Status Vocabulary
 
-```
-##-###-##### Client Name - Description/
-├── 00_OVERVIEW.md
-├── 01_FACTS.md
-├── 02_RECORDS/
-│   ├── 02_1_CLIENT_DOCUMENTS/
-│   └── 02_2_EMAILS/
-├── 03_ANALYSIS.md
-├── 04_ROADMAP.md
-├── 05_OUTPUTS/
-└── 06_ACTIONS.md
+Projects use the following status values:
+
+| Status | Meaning |
+|--------|---------|
+| `in_progress` | Active work underway |
+| `blocked` | Cannot proceed due to dependency or external factor |
+| `paused` | Intentionally on hold |
+| `waiting_ml1` | Awaiting ML1 decision or approval |
+
+Notes:
+- Status is a project-local operational indicator.
+- Status does not imply completion or approval.
+
+---
+
+## 10. Dependencies
+
+Projects may declare:
+
+- `depends_on`: list of project IDs this project needs
+- `blocks`: list of project IDs this project prevents
+
+Dependencies must be expressed as project IDs, not folder paths.
+
+**Example:**
+```yaml
+dependencies:
+  depends_on: [26-001-00001]
+  blocks: [26-001-00003]
 ```
 
 ---
 
-## Component Definitions
+## 11. Component Definitions
 
 ### 00_OVERVIEW.md
 
 | Property | Value |
 |----------|-------|
-| **Is** | Snapshot of the Project right now; parties, posture, objectives, status |
-| **Is NOT** | Doctrine; stable over time; citable as truth later |
+| **Is** | Snapshot of the project right now; objectives, status, risks, context |
+| **Is NOT** | Doctrine; stable over time; citable as truth |
 | **Think** | Dashboard, not record |
 
 **Contents:**
-- Parties and contacts
-- Scope and objectives
+- Project identification
+- Current stage and status
+- Objectives and scope summary
 - Key dates
-- Practice Area (at least one)
-- Solution (one or more)
-- Current status summary
 
-#### Practice Area
-
-Classification only — answers "What kind of legal work is this about?"
-
-| Practice Area | Scope |
-|---------------|-------|
-| Corporate | |
-| Contract | Franchising |
-| Compliance | Data Security, Cannabis, Financial Regulatory |
-| Transactions | |
-
-**Practice Area does:**
-- Group Projects into stable domains
-- Help with routing, reporting, staffing, and finding similar Projects
-
-**Practice Area does NOT:**
-- Determine what you should do
-- Imply a service type, strategy, or outcome
-- Become precedent or doctrine
-
-#### Solution
-
-Type of service being provided. A Project may have one or more Solutions.
-
----
-
-### 01_FACTS.md
+### 01_DECISIONS.md
 
 | Property | Value |
 |----------|-------|
-| **Is** | Factual assertions specific to this Project; time-bound, scoped, contextual |
-| **Is NOT** | Precedent; "generally true"; reusable as-is |
-| **Note** | Source for Phase 3A fact extraction, but not itself a fact registry |
+| **Is** | Record of ML1 decisions and pending decision requests |
+| **Is NOT** | Precedent; binding doctrine; generalizable guidance |
 
 **Contents:**
-- Chronological factual timeline
-- Key factual assertions
-- Non-normative: no interpretation, no lessons, no recommendations
+- Approved decisions with rationale
+- Pending decision requests
+- Decision history
 
-**Extraction:** Facts may be extracted per GOV-2026-005 (Matter → Fact Extraction Protocol).
-
----
-
-### 02_RECORDS/
+### 02_RISKS.md
 
 | Property | Value |
 |----------|-------|
-| **Is** | Raw, unchallenged records; documents, emails, correspondence |
-| **Is NOT** | Assertions; facts; interpretations |
-| **Key property** | These are inputs, not assertions |
-
-**Rule:** Records support facts; they are not facts themselves.
-
-**Subfolders:**
-- `02_1_CLIENT_DOCUMENTS/` — Documents received from or sent to client
-- `02_2_EMAILS/` — Email correspondence
-
----
-
-### 03_ANALYSIS.md
-
-| Property | Value |
-|----------|-------|
-| **Is** | Judgment exercised in context; legal reasoning; strategy rationale |
-| **Is NOT** | Guidance; a playbook; a "lesson learned" |
-| **Risk** | This is where thinking lives, and where exaggeration risk is highest if not properly contained |
+| **Is** | Risk and assumptions register |
+| **Is NOT** | Guarantees; predictions; commitments |
 
 **Contents:**
-- Legal issues identification
-- Risk assessment
-- Strategic options analysis
-- Recommendations (matter-specific, not generalizable)
+- Active risks with impact and likelihood
+- Assumptions requiring validation
+- Mitigations (proposed and implemented)
 
-**Extraction:** Patterns may be extracted per GOV-2026-004 (Matter → Canon Extraction Doctrine) only with explicit approval.
-
----
-
-### 04_ROADMAP.md
+### 03_DEPENDENCIES.md
 
 | Property | Value |
 |----------|-------|
-| **Is** | Forward-looking execution plan; tasks, steps, sequencing |
-| **Is NOT** | A procedure for reuse; a general workflow |
-| **Key property** | Roadmaps expire with the Project |
+| **Is** | Dependency map and constraint register |
+| **Is NOT** | Workflow; task sequencing; schedule |
 
 **Contents:**
-- Milestones and target dates
-- Deliverables schedule
-- Timeline visualization
-- Dependencies and constraints
+- Upstream dependencies (what this project needs)
+- Downstream impacts (what depends on this project)
+- External constraints
 
----
-
-### 05_OUTPUTS/
+### 04_CHANGELOG.md
 
 | Property | Value |
 |----------|-------|
-| **Is** | Drafted or delivered artifacts; filings, letters, memos |
-| **Is NOT** | Authoritative; truth-defining |
-| **Critical rule** | Outputs are derivative artifacts, never authoritative |
-
-**Audience:** May be LL-consumable, but they do not define truth.
+| **Is** | Audit trail of material changes |
+| **Is NOT** | Git log replacement; task completion record |
 
 **Contents:**
-- Work product generated for this matter
-- Drafts and final versions
-- Deliverables
+- What changed
+- When it changed
+- Why it changed
+- Who authorized it
 
 ---
 
-### 06_ACTIONS.md
+## 12. Agent Maintenance Permissions (Schema-Level)
 
-| Property | Value |
-|----------|-------|
-| **Is** | Executed steps; completed actions; audit trail of what was done |
-| **Is NOT** | Justification; evidence of correctness; precedent |
+Agents operating on `04_PROJECTS/**` may perform **maintenance edits**:
 
-**Contents:**
-- Active action items
-- Pending actions (blocked)
-- Completed actions log
-- Next steps
+### Allowed
+
+- Create missing required project files
+- Normalize frontmatter to schema
+- Append entries to `01_DECISIONS.md` (pending requests only)
+- Append entries to `02_RISKS.md` (identified risks)
+- Append entries to `04_CHANGELOG.md` (maintenance actions)
+- Update status indicators in `00_OVERVIEW.md`
+
+### Prohibited
+
+- Renaming, moving, deleting project files or folders
+- Advancing lifecycle stage without ML1 instruction
+- Marking exit criteria satisfied without ML1 instruction
+- Overwriting entire files without ML1 instruction
 
 ---
 
-## Constraints
+## 13. Constraints
 
 ### What Projects CANNOT Do
 
 - Define `source_of_truth: true`
 - Have `authority.level: binding` or `procedural`
 - Be cited as precedent for other projects
-- Become canon without explicit extraction (GOV-2026-004)
-- Generate facts without extraction protocol (GOV-2026-005)
+- Become canon without explicit extraction
 
 ### What Projects CAN Do
 
 - Store contextual, project-specific information
-- Support fact extraction (as source, not registry)
 - Support pattern identification (for human review)
-- Be read and written by agents
+- Be read, written, and edited by agents (within guardrails)
 - Be closed and archived
 
 ---
 
-## Lifecycle
+## 14. Precedence
 
-| Status | Location | Meaning |
-|--------|----------|---------|
-| `open` | `04_PROJECTS/open/{delivery status}/` | Active work |
-| `pending` | `04_PROJECTS/pending/` | Awaiting action or decision |
-| `closed` | `04_PROJECTS/closed/` | Completed |
+If there is conflict between system docs:
 
-**Movement:** Projects move between status folders as their state changes.
+1. `00_SYSTEM/PROJECT_SCHEMA.md` (this file)
+2. `00_SYSTEM/SCHEMAS.md`
+3. `00_SYSTEM/FOLDER_MAP.md`
 
-**Archive:** Closed projects may be moved to `10_ARCHIVE/` for long-term preservation.
+Unresolved conflicts must be flagged for ML1.
 
 ---
 
-## Related Governance
-
-- **GOV-2026-004:** Project → Canon Extraction Doctrine (legacy: Matter → Canon)
-- **GOV-2026-005:** Project → Fact Extraction Protocol (legacy: Matter → Fact)
-- **GOV-2026-003:** Violation Triage Protocol (for non-compliance)
-
----
-
-## Template
-
-A project template is available at:
-
-```
-03_TEMPLATES/internal/project-template/
-```
-
-To create a new project: copy template → rename → move to appropriate status folder.
+**End of Project Schema**

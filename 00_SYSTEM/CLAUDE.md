@@ -4,7 +4,7 @@ title: Second Brain — System Boot Instructions
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-01-22
+last_updated: 2026-02-09
 tags: [boot, system]
 ---
 
@@ -20,6 +20,7 @@ This repository is a Second Brain system.
 
 ## Agents
 - Agent governance (rules, guardrails) lives in `00_SYSTEM/governance/agents/`.
+- Agent registry (types and classifications) lives in `00_SYSTEM/governance/agents/AGENT_REGISTRY.md`.
 - Executable agent definitions live in `.claude/agents/`.
 - `00_SYSTEM/AGENTS/` is **deprecated** — do not use.
 - Agents are Markdown files that must be followed exactly when invoked.
@@ -35,6 +36,7 @@ This repository is a Second Brain system.
 **Binding protocol:** `00_SYSTEM/governance/agents/agent-write-guardrail.md` (GOV-2026-006)
 
 - Agents may write **only** to `09_INBOX/_AGENT_OUTPUT/`.
+- Approved agent exceptions are defined in GOV-2026-006 and listed in the registry.
 - All other directories are **read-only** for agents.
 - Agents must not rename, move, edit, overwrite, or delete any existing files.
 - Agents must not call or interact with external systems, APIs, or services.

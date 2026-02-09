@@ -40,23 +40,17 @@ Read these files first. They define what "correct" looks like.
 ## Checks to Perform
 
 ### 1. Project ID Format
-- Inspect all directories under `04_PROJECTS/` (recursively through `open/`, `pending/`, `closed/`).
+- Inspect all directories under `04_PROJECTS/`.
 - Flag any project folder whose name does not match the format: `##-###-##### Name - Description`
 - The numeric portion must match `##-###-#####` (2-digit year, 3-digit sequence, 5-digit project).
 
-### 2. Required Project Files / Metadata
-- For each project folder, verify these required components exist:
-  - `00_OVERVIEW.md`
-  - `01_FACTS.md`
-  - `02_RECORDS/` (with subdirectories `02_1_CLIENT_DOCUMENTS/`, `02_2_EMAILS/`)
-  - `03_ANALYSIS.md`
-  - `04_ROADMAP.md`
-  - `05_OUTPUTS/`
-  - `06_ACTIONS.md`
-- For files that exist, check for required YAML frontmatter fields: `id`, `title`, `client`, `owner`, `status`, `priority`, `created_date`, `last_updated`, `tags`
+### 2. Project Metadata / Frontmatter
+- For all markdown files within `04_PROJECTS/`, verify YAML frontmatter exists (per `00_SYSTEM/SCHEMAS.md`).
+- If `00_OVERVIEW.md` exists, verify it uses the **canonical** `project:` block schema from `00_SYSTEM/PROJECT_SCHEMA.md` (id, title, stage, status).
+- If `00_OVERVIEW.md` uses legacy top‑level fields, flag as schema drift.
 
 ### 3. Orphan Documents within Projects
-- Identify files inside a project folder that do not map to the defined internal structure (00-06 components).
+- Identify files inside a project folder that do not map to the documented internal structure (standard stage folders in `00_SYSTEM/PROJECT_SCHEMA.md`).
 - Flag suspected orphans and explain why they were flagged.
 - If the schema does not define a clear rule for a file, label the finding as "heuristic" with lower confidence.
 
