@@ -130,10 +130,10 @@ The following items are at the scope boundary and require ML1 decision:
 
 | Item | Include? | Rationale |
 |------|----------|-----------|
-| Cryptocurrency markets | TBD | Depends on asset class scope |
-| Options/derivatives | TBD | Depends on complexity appetite |
-| Leverage policy | TBD | Risk vs return considerations |
-| Multi-account coordination | TBD | Operational complexity |
+| Cryptocurrency markets | TBD (Decision Backlog DB-001) | Depends on asset class scope |
+| Options/derivatives | TBD (Decision Backlog DB-002) | Depends on complexity appetite |
+| Leverage policy | TBD (Decision Backlog DB-003) | Risk vs return considerations |
+| Multi-account coordination | TBD (Decision Backlog DB-004) | Operational complexity |
 
 ---
 

@@ -14,7 +14,7 @@ tags: [trading, playbook, handoff, platform-selection]
 Provide required inputs and non‑negotiable constraints for platform selection.
 
 ## Required Inputs
-- Strategy Core (Layer 2) — `TRADING_PLAYBOOK_STRATEGY_CORE_V1.md`
+- Strategy Manual (Layer 2) — `07_REFERENCE/TRADING_STRATEGIES_MANUAL_V1.md`
 - Principles & Constraints Ledger
 - Eligibility Gates and Regime Framework
 - Change Log + Delta Notes

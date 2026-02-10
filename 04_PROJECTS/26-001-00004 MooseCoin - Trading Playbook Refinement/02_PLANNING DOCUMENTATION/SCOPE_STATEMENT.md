@@ -14,7 +14,9 @@ tags: [trading, playbook, scope, planning]
 Define the planning‑stage scope boundaries for refining the MooseCoin trading playbook (Layer 2) based on Project 26-001-00001 outputs.
 
 ## In Scope
-- Consolidation of Layer 2 strategy artifacts into a single playbook
+- Consolidation of Layer 2 strategy artifacts 
+- Improvement of Trading Playbook
+- Improvement of Trading STrategy
 - Refinement of principles and constraints ledger
 - Strategy consistency matrix creation
 - Change log and delta tracking

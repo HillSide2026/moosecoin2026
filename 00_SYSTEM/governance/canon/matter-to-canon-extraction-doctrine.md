@@ -91,7 +91,7 @@ Extraction MUST first appear as one of:
 
 | Form | Location | Status |
 |------|----------|--------|
-| Research note | `07_RESEARCH/` | Non-authoritative |
+| Research note | `08_RESEARCH/` | Non-authoritative |
 | Draft playbook | `06_OUTPUTS/drafts/` | `status: draft` |
 | Draft template | `06_OUTPUTS/drafts/` | `status: draft` |
 | Draft doctrine | `06_OUTPUTS/drafts/` | `status: draft` |
@@ -109,7 +109,7 @@ The only allowed flow:
        ↓
    Extraction (human)
        ↓
-   Draft artifact (06_OUTPUTS/drafts/ or 07_RESEARCH/)
+   Draft artifact (06_OUTPUTS/drafts/ or 08_RESEARCH/)
        ↓
    Review (status: proposed)
        ↓

@@ -1,12 +1,16 @@
 ---
-id: 26-001-00001
-title: MooseCoin - Formalize Trading Strategy, Approach, and Tactics
-client: MooseCoin
-owner: ML1
-status: open
-priority: standard
+project:
+  id: 26-001-00001
+  title: MooseCoin - Formalize Trading Strategy, Approach, and Tactics
+  stage: closing
+  status: closed
+owner:
+  ml1: ML1
 created_date: 2026-02-03
-last_updated: 2026-02-03
+last_updated: 2026-02-08
+dependencies:
+  depends_on: []
+  blocks: [26-001-00002, 26-001-00003]
 tags: [trading, strategy, doctrine]
 ---
 
@@ -16,13 +20,14 @@ tags: [trading, strategy, doctrine]
 
 | Property | Value |
 |----------|-------|
-| Lifecycle Model | Standard 4-stage project lifecycle (minimum) |
+| Lifecycle Model | Standard 4-stage project lifecycle |
 | Authority | ML1 approves transitions between stages |
 | Role of ML2 | System-of-record, structure, consistency, audit trail |
+| Governance Principle | Risk governance supersedes delivery velocity |
 
 ## Objective
 
-Convert implicit trading judgment into explicit, inspectable doctrine.
+Create and revise an operational trading playbook with explicit, inspectable procedures under strict risk governance.
 
 ## Key Questions
 
@@ -34,22 +39,36 @@ Convert implicit trading judgment into explicit, inspectable doctrine.
 
 ### In Scope
 
-- Trading Strategy Doctrine
-- Trading Approach Playbook
-- Trading Tactics Checklist(s)
+- Create and revise an operational trading playbook
+- Document explicit procedures for entry, stop, target, stand-aside
+- Define risk governance rules and non-negotiable constraints
+- Define market universe and session constraints at the playbook level
 
-### Explicit Exclusions
+### Out of Scope
 
-See `05_OUTPUTS/SCOPE_BOUNDARIES.md` for detailed boundaries:
+- Building or implementing a trading system or risk engine
+- Backtesting, walk-forward testing, paper trading, or live pilot execution
+- Performance optimization for win rate or frequency
+- Latency-sensitive or HFT execution
+- AI/ML self-modifying logic in live trading
 - Platform selection (deferred to 26-001-00002)
 - Website development (deferred to 26-001-00003)
-- Tax/legal considerations
-- Specific trade decisions
-- Automation implementation
+
+### Assumptions
+
+- Capital owner accepts low trade frequency
+- Standing aside is an acceptable outcome
+
+### Constraints
+
+- Hard risk limits (per-trade, daily, weekly)
+- No averaging down or position scaling
+- Crypto exposure flat by session end
+- Single active strategy instance per account
 
 ## Definitions
 
-See `05_OUTPUTS/DEFINITIONS.md` for detailed definitions.
+See `01_INITIATION DOCUMENTATION/DEFINITIONS.md` for detailed definitions.
 
 | Term | Definition |
 |------|------------|
@@ -62,23 +81,39 @@ See `05_OUTPUTS/DEFINITIONS.md` for detailed definitions.
 | Date | Event |
 |------|-------|
 | 2026-02-03 | Project opened |
-| 2026-02-03 | Initiation outputs drafted (awaiting ML1 approval) |
-| | Initiation complete (pending ML1 approval) |
-| | Planning complete |
+| 2026-02-03 | Initiation outputs drafted |
+| 2026-02-06 | Planning stage deliverables received |
+| | Planning complete (pending ML1 approval) |
 | | Execution complete |
 | | Project closed |
 
 ## Current Stage
 
-**Stage 1: Initiation** — Outputs Complete, Awaiting ML1 Approval
+**Stage 3: Trading Playbook** — Complete (2026-02-08)
 
-### Stage 1 Outputs (Draft)
+**Stage 4: Closing** — Complete (2026-02-08)
+
+### Stage 1 Outputs (Initiation)
 
 | Output | Status | Location |
 |--------|--------|----------|
-| Project Charter | Draft | `05_OUTPUTS/PROJECT_CHARTER.md` |
-| Scope Boundaries | Draft | `05_OUTPUTS/SCOPE_BOUNDARIES.md` |
-| Definitions | Draft | `05_OUTPUTS/DEFINITIONS.md` |
+| Project Charter | Draft | `01_INITIATION DOCUMENTATION/PROJECT_CHARTER.md` |
+| Scope Boundaries | Draft | `01_INITIATION DOCUMENTATION/SCOPE_BOUNDARIES.md` |
+| Definitions | Draft | `01_INITIATION DOCUMENTATION/DEFINITIONS.md` |
+
+### Stage 2 Outputs (Planning)
+
+| Output | Status | Location |
+|--------|--------|----------|
+| Scope Statement | Draft | `00_OVERVIEW.md` (this file, Scope section) |
+| Work Breakdown Structure | Draft | `03_DEPENDENCIES.md` |
+| Schedule / Roadmap | Draft | `03_DEPENDENCIES.md` |
+| Resource Plan | Draft | `03_DEPENDENCIES.md` |
+| Budget / Cost Baseline | Draft | `03_DEPENDENCIES.md` |
+| Risk Register (Full) | Draft | `02_RISKS.md` |
+| Communications Plan | Draft | `01_DECISIONS.md` |
+| RACI Matrix | Draft | `01_DECISIONS.md` |
+| Change Control Process | Draft | `01_DECISIONS.md` |
 
 ## Dependencies
 
@@ -91,9 +126,6 @@ See `05_OUTPUTS/DEFINITIONS.md` for detailed definitions.
 
 ## Status Summary
 
-Project initiated. Stage 1 (Initiation) outputs drafted:
-- Project Charter
-- Scope Boundaries
-- Definitions (Strategy vs Approach vs Tactics)
+Planning stage deliverables received (2026-02-06). Full PMP including scope statement, WBS, schedule, risk register, resource plan, budget baseline, communications plan, RACI matrix, and change control process have been filed across canonical project files.
 
-**Next Step:** ML1 review and approval of Initiation outputs to proceed to Stage 2 (Planning).
+**Next Step:** Archive project and transition refinement to Project 4.

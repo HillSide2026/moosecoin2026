@@ -4,7 +4,7 @@ title: Template Compliance Checklist
 owner: ML1
 status: active
 created_date: 2026-02-08
-last_updated: 2026-02-09
+last_updated: 2026-02-10
 tags: [compliance, templates]
 ---
 
@@ -31,17 +31,17 @@ tags: [compliance, templates]
 
 | Document | Required | Present | Location | Notes |
 |----------|----------|---------|----------|-------|
-| Decision Log | Yes | No | | Not started |
-| Issue Log | Yes | No | | Not started |
-| Change Requests Log | Yes | No | | Not started |
-| Risk Register (Updated) | Yes | No | | Not started |
-| Status Report | Yes | No | | Not started |
+| Decision Log | Yes | Yes | `03_EXECUTION DOCUMENTATION/DECISION_LOG.md` | Execution complete |
+| Issue Log | Yes | Yes | `03_EXECUTION DOCUMENTATION/ISSUE_LOG.md` | Execution complete |
+| Change Requests Log | Yes | Yes | `03_EXECUTION DOCUMENTATION/CHANGE_REQUESTS_LOG.md` | Execution complete |
+| Risk Register (Updated) | Yes | Yes | `03_EXECUTION DOCUMENTATION/RISK_REGISTER_UPDATED.md` | Execution complete |
+| Status Report | Yes | Yes | `03_EXECUTION DOCUMENTATION/STATUS_REPORT.md` | Execution complete |
 
 ## Closure (Mandatory)
 
 | Document | Required | Present | Location | Notes |
 |----------|----------|---------|----------|-------|
-| Final Deliverables Acceptance Record | Yes | No | | Not started |
-| Project Closure Report | Yes | No | | Not started |
-| Lessons Learned / Retrospective | Yes | No | | Not started |
-| Archive Index | Yes | No | | Not started |
+| Final Deliverables Acceptance Record | Yes | Yes | `04_CLOSING DOCUMENTATION/FINAL_DELIVERABLES_ACCEPTANCE.md` | |
+| Project Closure Report | Yes | Yes | `04_CLOSING DOCUMENTATION/PROJECT_CLOSURE_REPORT.md` | |
+| Lessons Learned / Retrospective | Yes | Yes | `04_CLOSING DOCUMENTATION/LESSONS_LEARNED.md` | |
+| Archive Index | Yes | Yes | `04_CLOSING DOCUMENTATION/ARCHIVE_INDEX.md` | |

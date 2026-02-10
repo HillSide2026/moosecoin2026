@@ -16,7 +16,7 @@ This document describes the repository as it exists today (descriptive), not an 
 **Purpose:** System governance and mechanics
 
 **Structure:**
-- `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/)
+- `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/, trading/)
 - `/governance/agents/AGENT_REGISTRY.md` — Canonical executable agent registry
 - `/audits/` — Structural and compliance audit reports
 - Key files: AGENT_REGISTRY.md, CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
@@ -123,7 +123,20 @@ This document describes the repository as it exists today (descriptive), not an 
 
 ---
 
-## 07_RESEARCH/
+## 07_REFERENCE/
+**Purpose:** External and static sources
+
+**Structure:**
+- By reference type
+
+**Rules:**
+- Read-only
+- Never binding
+- Contextual use only
+
+---
+
+## 08_RESEARCH/
 **Purpose:** Exploratory and analytical material
 
 **Structure:**
@@ -134,20 +147,6 @@ This document describes the repository as it exists today (descriptive), not an 
 - Reference-only
 - No direct emission to LL
 - May inform playbooks/templates
-
----
-
-## 08_REFERENCE/
-**Purpose:** External and static sources
-
-**Structure:**
-- By reference type
-- `/external_systems/` — Non-binding external architectures and notes
-
-**Rules:**
-- Read-only
-- Never binding
-- Contextual use only
 
 ---
 

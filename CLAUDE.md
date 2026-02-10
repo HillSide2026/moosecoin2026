@@ -1,3 +1,13 @@
+---
+id: SYSTEM-CLAUDE-ROOT
+title: Root Claude Instructions
+owner: ML1
+status: approved
+created_date: 2026-01-22
+last_updated: 2026-02-08
+tags: [system, instructions]
+---
+
 # Claude Operating Instructions — MooseCoin2026
 
 You are operating inside the MooseCoin2026 repository.

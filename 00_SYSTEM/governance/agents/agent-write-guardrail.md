@@ -92,8 +92,8 @@ Agents **must not**:
 | Write to `04_PROJECTS/` | Projects contain privileged work product (see Section 2A for approved exceptions) |
 | Write to `05_RUNS/` | Runs are immutable audit records |
 | Write to `06_OUTPUTS/` | Outputs require human review context |
-| Write to `07_RESEARCH/` | Research requires extraction protocol |
-| Write to `08_REFERENCE/` | Reference is read-only |
+| Write to `08_RESEARCH/` | Research requires extraction protocol |
+| Write to `07_REFERENCE/` | Reference is read-only |
 | Write to `10_ARCHIVE/` | Archive is immutable |
 | Call or interact with external systems, APIs, or services | Prevents unauthorized data exfiltration or side effects |
 

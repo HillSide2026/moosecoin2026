@@ -26,4 +26,4 @@ ML2 does not act autonomously; it records and enforces ML1 decisions.
   local-first system-of-record governed by ML1.
 - **Second Brain (External / Iwo Szapar):** An external reference
   architecture. Non-binding. See
-  `08_REFERENCE/external_systems/iwo_szapar_second_brain/`.
+  `07_REFERENCE/external_systems/iwo_szapar_second_brain/`.

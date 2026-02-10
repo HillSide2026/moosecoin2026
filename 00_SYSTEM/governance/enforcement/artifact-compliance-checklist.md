@@ -75,7 +75,7 @@ For any artifact with `ll_consumable: true`, verify:
 - [ ] File is in an LL-consumable folder (01_DOCTRINE, 03_TEMPLATES, 06_OUTPUTS)
 - [ ] OR file has explicit approval metadata
 
-**Violation:** `ll_consumable: true` in 00_SYSTEM, 04_PROJECTS, 05_RUNS, 07_RESEARCH, 08_REFERENCE, 09_INBOX, 10_ARCHIVE without override justification
+**Violation:** `ll_consumable: true` in 00_SYSTEM, 04_PROJECTS, 05_RUNS, 08_RESEARCH, 07_REFERENCE, 09_INBOX, 10_ARCHIVE without override justification
 
 ---
 

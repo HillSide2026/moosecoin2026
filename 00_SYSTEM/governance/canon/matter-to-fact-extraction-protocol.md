@@ -117,7 +117,7 @@ A fact is:
 Extracted facts reside in:
 
 ```
-07_RESEARCH/facts/
+08_RESEARCH/facts/
   /by-matter/
   /by-topic/
 ```

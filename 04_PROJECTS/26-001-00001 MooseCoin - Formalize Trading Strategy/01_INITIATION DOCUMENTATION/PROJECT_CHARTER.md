@@ -19,7 +19,7 @@ tags: [trading, strategy, charter, initiation]
 | Client | MooseCoin |
 | Project Manager | ML1 |
 | Start Date | 2026-02-03 |
-| Target Completion | TBD (pending ML1 approval of timeline) |
+| Target Completion | TBD (tracked in Decision Backlog DB-005) |
 
 ---
 

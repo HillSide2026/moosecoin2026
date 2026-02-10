@@ -63,7 +63,7 @@ authorized through the reuse requirement above:
 | Agent framework | PROHIBITED by default | No autonomous execution |
 | External tool write access | PROHIBITED by default | No modification of ML2 state |
 
-Reference location: `08_REFERENCE/external_systems/iwo_szapar_second_brain/`
+Reference location: `07_REFERENCE/external_systems/iwo_szapar_second_brain/`
 
 ---
 

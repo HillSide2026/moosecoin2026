@@ -1,20 +1,35 @@
 ---
-id: 26-001-00004-PLAYBOOK-STRATEGY-CORE-V1
-title: MooseCoin Trading Playbook — Strategy Core (v1)
+id: 26-001-00004-TRADING-STRATEGIES-MANUAL-V1
+title: MooseCoin Trading Strategies Manual (v1)
 owner: ML1
 status: draft
 created_date: 2026-02-09
 last_updated: 2026-02-09
-tags: [trading, playbook, strategy, layer2]
+tags: [trading, strategy, strategies, manual, layer2]
 ---
 
-# MooseCoin Trading Playbook — Strategy Core (v1)
+# MooseCoin Trading Strategies Manual (v1)
 
 **Owner:** ML1  
 **Layer:** 2 (Strategy)  
 **Purpose:** Define when trading is allowed to exist and why, independent of tools or setups.
 
 ---
+
+## Current Strategy & Playbook Inventory
+
+- **Strategy (active):** `07_REFERENCE/TRADING_STRATEGY1_RANGEBREAKHOLD.md`
+- **Playbook (active):** `02_PLAYBOOKS/TRADING_PLAYBOOK_V2.md`
+- **Playbook (archived):** `10_ARCHIVE/04_PROJECTS/26-001-00001 MooseCoin - Formalize Trading Strategy/TRADING_PLAYBOOK_V1.md`
+
+## Documentation Inconsistencies (To Resolve)
+
+1. **Playbook location mismatch**  
+   - `04_PROJECTS/26-001-00001 MooseCoin - Formalize Trading Strategy/01_INITIATION DOCUMENTATION/DEFINITIONS.md` and `SCOPE_BOUNDARIES.md` specify playbooks live in `02_PLAYBOOKS/`, but the active playbook is in `04_PROJECTS/**/03_EXECUTION DOCUMENTATION/`.
+2. **Authority language mismatch**  
+   - `TRADING_PLAYBOOK_V2.md` states it is “binding unless superseded,” but playbooks are procedural and non‑binding per system governance.
+3. **Terminology drift inside this manual**  
+   - This is a strategy manual, but Section 11 ends with “No setup may weaken this playbook.” That should likely read “strategy.”
 
 ## 1. Strategy Objective
 
@@ -182,7 +197,7 @@ This strategy will not:
   - Why they fail outside that regime
   - How they respect eligibility gates
 
-No setup may weaken this playbook.
+No setup may weaken this strategy.
 
 ---
 

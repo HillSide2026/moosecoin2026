@@ -4,7 +4,7 @@ title: Artifact Schemas
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-01-22
+last_updated: 2026-02-06
 tags: [schemas, metadata]
 ---
 
@@ -140,20 +140,20 @@ audience: { scope: ll_consumable, ll_consumable: true }
 agents: { read: allow, write: allow }
 ```
 
-### 07_RESEARCH/
-```yaml
-lifecycle: { folder_class: library }
-authority: { level: reference, source_of_truth: false }
-audience: { scope: ml2_internal, ll_consumable: false }
-agents: { read: allow, write: allow }
-```
-
-### 08_REFERENCE/
+### 07_REFERENCE/
 ```yaml
 lifecycle: { folder_class: library }
 authority: { level: reference, source_of_truth: false }
 audience: { scope: ml2_internal, ll_consumable: false }
 agents: { read: allow, write: deny }
+```
+
+### 08_RESEARCH/
+```yaml
+lifecycle: { folder_class: library }
+authority: { level: reference, source_of_truth: false }
+audience: { scope: ml2_internal, ll_consumable: false }
+agents: { read: allow, write: allow }
 ```
 
 ### 09_INBOX/

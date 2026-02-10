@@ -38,8 +38,8 @@ All directories are in scope for compliance checks:
 - `04_PROJECTS/` — work, non-authoritative
 - `05_RUNS/` — event, immutable
 - `06_OUTPUTS/` — work
-- `07_RESEARCH/` — library
-- `08_REFERENCE/` — library
+- `08_RESEARCH/` — library
+- `07_REFERENCE/` — library
 - `09_INBOX/` — intake
 - `10_ARCHIVE/` — archive, immutable
 
@@ -247,7 +247,7 @@ Changes to canon occur ONLY via the Gold Promotion Protocol:
 **Severity:** P1
 **Response:**
 1. Log violation
-2. Move file to `08_REFERENCE/`
+2. Move file to `07_REFERENCE/`
 3. Update any citations
 4. Verify placement correct
 5. Close

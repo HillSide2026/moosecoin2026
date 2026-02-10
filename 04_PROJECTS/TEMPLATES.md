@@ -1,3 +1,13 @@
+---
+id: PROJECT-TEMPLATES
+title: Project Templates
+owner: ML1
+status: draft
+created_date: 2026-01-22
+last_updated: 2026-02-08
+tags: [templates, projects, governance]
+---
+
 # Project Templates
 
 **Location:** `04_PROJECTS/TEMPLATES.md`
