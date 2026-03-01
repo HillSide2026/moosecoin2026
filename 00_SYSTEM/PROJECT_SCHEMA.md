@@ -4,7 +4,7 @@ title: Project Schema
 owner: ML1
 status: approved
 created_date: 2026-01-21
-last_updated: 2026-02-03
+last_updated: 2026-03-01
 tags: [schema, projects, structure]
 ---
 
@@ -37,9 +37,9 @@ Projects are stored directly under `04_PROJECTS/`:
 
 ```
 04_PROJECTS/
-├── 26-001-00001 MooseCoin - Formalize Trading Strategy/
-├── 26-001-00002 MooseCoin - Trading Platform Selection/
-└── 26-001-00003 MooseCoin - Website Development/
+├── MCP-26-001 – Formalize Trading Strategy/
+├── MCP-26-002 – Trading Platform Selection/
+└── MCP-26-003 – Website Development/
 ```
 
 No intermediary folders (no `open/`, `pending/`, `closed/` subfolders).
@@ -52,7 +52,7 @@ No intermediary folders (no `open/`, `pending/`, `closed/` subfolders).
 YY-CCC-NNNNN Client Name - Description
 ```
 
-**Example:** `26-001-00001 MooseCoin - Formalize Trading Strategy`
+**Example:** `MCP-26-001 – Formalize Trading Strategy`
 
 ---
 
@@ -296,8 +296,9 @@ Agents operating on `04_PROJECTS/**` may perform **maintenance edits**:
 If there is conflict between system docs:
 
 1. `00_SYSTEM/PROJECT_SCHEMA.md` (this file)
-2. `00_SYSTEM/SCHEMAS.md`
-3. `00_SYSTEM/FOLDER_MAP.md`
+2. `00_SYSTEM/FOLDER_SCHEMAS.md`
+3. `00_SYSTEM/SCHEMAS.md`
+4. `00_SYSTEM/FOLDER_MAP.md`
 
 Unresolved conflicts must be flagged for ML1.
 

@@ -4,7 +4,7 @@ title: Second Brain — Layer 1 Knowledge Repository
 owner: ML1
 status: approved
 created_date: 2026-01-04
-last_updated: 2026-01-24
+last_updated: 2026-03-01
 tags: [system, repository, readme]
 ---
 
@@ -16,7 +16,7 @@ focused on HillSide Holdings (2026).
 ## Purpose
 This repository exists to preserve, structure, and govern:
 - ML1-approved doctrine
-- Derived playbooks and templates
+- Derived models and protocols
 - Research and reference material
 - Decision provenance and system rules
 

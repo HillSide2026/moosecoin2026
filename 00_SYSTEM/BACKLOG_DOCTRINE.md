@@ -4,7 +4,7 @@ title: Doctrine Backlog
 owner: ML1
 status: draft
 created_date: 2026-01-23
-last_updated: 2026-01-23
+last_updated: 2026-03-01
 tags:
   - backlog
   - doctrine
@@ -49,11 +49,11 @@ Score each backlog item on a 1–5 scale and calculate:
 
 ### 1) Output governance doctrine (LL-facing)
 - **Problem statement**: Output to LL must be tightly controlled and labeled to prevent unapproved interpretation. There is no binding doctrine that defines what can be emitted or how to label it for downstream consumption.
-- **Scope**: All outputs intended for LL consumption across playbooks, templates, and runs.
-- **Non-scope**: Does not define the content of specific outputs or LL delivery templates.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` (primary), references in `02_PLAYBOOKS/`.
+- **Scope**: All outputs intended for LL consumption across models, protocols, and runs.
+- **Non-scope**: Does not define the content of specific outputs or LL delivery formats.
+- **Proposed output location(s)**: `01_DOCTRINE/` (primary), references in `02_MODELS/`.
 - **Acceptance criteria**:
-  - Doctrine defines allowed output categories and required labels: “ML1-approved doctrine,” “Draft for ML1 approval,” “Derived from approved template vX.Y.”
+  - Doctrine defines allowed output categories and required labels: “ML1-approved doctrine,” “Draft for ML1 approval,” “Derived from approved model/protocol vX.Y.”
   - Doctrine explicitly forbids interpretation beyond approved artifacts.
   - Doctrine references where labels must live (frontmatter + output header) and provides examples.
 - **Dependencies**: Approval semantics doctrine.
@@ -70,7 +70,7 @@ Score each backlog item on a 1–5 scale and calculate:
 - **Problem statement**: The system needs a canonical definition of “ML1-approved doctrine” vs “draft for ML1 approval,” and how approval status is conveyed and cited. Without this, approvals are inferred or inconsistent.
 - **Scope**: Approval labels, required metadata, and what constitutes binding approval.
 - **Non-scope**: Does not define the substantive content of doctrine items.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `00_SYSTEM/SCHEMAS.md`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `00_SYSTEM/SCHEMAS.md`.
 - **Acceptance criteria**:
   - Doctrine defines the approval states and required labels.
   - Doctrine defines what “derived from” means and how derivations must cite sources.
@@ -87,9 +87,9 @@ Score each backlog item on a 1–5 scale and calculate:
 
 ### 3) Artifact lifecycle doctrine
 - **Problem statement**: The repository lacks binding guidance on lifecycle stages and transitions for artifacts, risking inconsistent status usage and unclear deprecation paths.
-- **Scope**: All governed artifacts in canon folders (system, doctrine, templates, playbooks).
+- **Scope**: All governed artifacts in canon folders (system, doctrine, models, protocols).
 - **Non-scope**: Does not define project/matter lifecycle states.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `00_SYSTEM/SCHEMAS.md`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `00_SYSTEM/SCHEMAS.md`.
 - **Acceptance criteria**:
   - Doctrine defines lifecycle states (draft → approved → deprecated → archived).
   - Doctrine defines allowed transitions and who can authorize them.
@@ -104,30 +104,30 @@ Score each backlog item on a 1–5 scale and calculate:
   - Scope: lifecycle states for canon artifacts.
   - Effective date: YYYY-MM-DD
 
-### 4) Template governance doctrine
-- **Problem statement**: Templates are source-of-truth artifacts but lack doctrine specifying how templates become binding, how versions are managed, and how changes propagate.
-- **Scope**: Template approval, versioning, and binding rules for `03_TEMPLATES/`.
-- **Non-scope**: Does not define the content of specific templates.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/`, with references in `03_TEMPLATES/`.
+### 4) Protocol governance doctrine
+- **Problem statement**: Protocols are source-of-truth artifacts but lack doctrine specifying how protocols become binding, how versions are managed, and how changes propagate.
+- **Scope**: Protocol approval, versioning, and binding rules for `03_PROTOCOLS/`.
+- **Non-scope**: Does not define the content of specific protocols.
+- **Proposed output location(s)**: `01_DOCTRINE/`, with references in `03_PROTOCOLS/`.
 - **Acceptance criteria**:
-  - Doctrine defines template versioning rules and approval thresholds.
-  - Doctrine defines how template changes are announced and adopted.
-  - Doctrine defines how derivative outputs reference template version IDs.
+  - Doctrine defines protocol versioning rules and approval thresholds.
+  - Doctrine defines how protocol changes are announced and adopted.
+  - Doctrine defines how derivative outputs reference protocol version IDs.
 - **Dependencies**: Approval semantics doctrine.
-- **Provenance**: Template schema defines version/approval status but lacks governing doctrine (`00_SYSTEM/SCHEMAS.md`).
+- **Provenance**: Protocol schema defines version/approval status but lacks governing doctrine (`00_SYSTEM/SCHEMAS.md`).
 - **Suggested owner/approver**: ML1
 - **Draft version placeholder**: v0.1
 - **Scoring**: Frequency 4, Risk 4, Leverage 4, Effort 3 → **Priority 9**
 - **Decision provenance fields**:
-  - Prompted by: missing policy for template binding and version upgrades.
-  - Scope: template governance across the system.
+  - Prompted by: missing policy for protocol binding and version upgrades.
+  - Scope: protocol governance across the system.
   - Effective date: YYYY-MM-DD
 
 ### 5) Deprecation policy doctrine
 - **Problem statement**: There is no binding policy describing how artifacts are deprecated, redirected, and archived, creating risk of stale guidance in use.
 - **Scope**: Deprecation, redirect, and archive rules for canon artifacts.
 - **Non-scope**: Does not define lifecycle states (covered by lifecycle doctrine).
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `10_ARCHIVE/` and `00_SYSTEM/SCHEMAS.md`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `10_ARCHIVE/` and `00_SYSTEM/SCHEMAS.md`.
 - **Acceptance criteria**:
   - Doctrine defines deprecation triggers and required notices.
   - Doctrine defines redirect behavior and retention expectations.
@@ -146,10 +146,10 @@ Score each backlog item on a 1–5 scale and calculate:
 - **Problem statement**: Decision logs exist but lack a binding standard for fields, linking, and affected artifacts, making provenance inconsistent.
 - **Scope**: Decision log format, required fields, and linking rules.
 - **Non-scope**: Does not decide any substantive policies.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `00_SYSTEM/DECISION_LOG.md`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `00_SYSTEM/DECISION_LOG.md`.
 - **Acceptance criteria**:
   - Doctrine defines required fields (decision, rationale, scope, affected artifacts, effective date).
-  - Doctrine defines linking rules to impacted doctrine/playbooks/templates.
+  - Doctrine defines linking rules to impacted doctrine/models/protocols.
   - Doctrine defines who can log binding decisions.
 - **Dependencies**: Approval semantics doctrine.
 - **Provenance**: Existing `00_SYSTEM/DECISION_LOG.md` lacks canonical schema guidance.
@@ -165,7 +165,7 @@ Score each backlog item on a 1–5 scale and calculate:
 - **Problem statement**: There is no defined process for recording, approving, and timeboxing exceptions to governance rules.
 - **Scope**: Exception requests, approvals, timeboxes, and retirement requirements.
 - **Non-scope**: Does not define substantive exceptions.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `00_SYSTEM/`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `00_SYSTEM/`.
 - **Acceptance criteria**:
   - Doctrine defines exception record fields (scope, reason, approver, expiry).
   - Doctrine defines renewal rules and sunset behavior.
@@ -184,11 +184,11 @@ Score each backlog item on a 1–5 scale and calculate:
 - **Problem statement**: The system uses legacy terms (e.g., Matter vs Project) without binding doctrine for canonical vocabulary, causing ambiguity.
 - **Scope**: Canonical naming, taxonomy definitions, and allowed legacy mappings.
 - **Non-scope**: Does not rename existing artifacts or folders.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `00_SYSTEM/GLOSSARY.md` and `00_SYSTEM/LEGACY_TERMS.md`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `00_SYSTEM/GLOSSARY.md` and `00_SYSTEM/LEGACY_TERMS.md`.
 - **Acceptance criteria**:
   - Doctrine defines canonical vocabulary and mandatory usage.
   - Doctrine specifies how legacy terms map to canonical terms.
-  - Doctrine defines enforcement points (templates, playbooks, documentation).
+  - Doctrine defines enforcement points (protocols, models, documentation).
 - **Dependencies**: Approval semantics doctrine.
 - **Provenance**: Existing glossary and legacy terms are non-binding (`00_SYSTEM/GLOSSARY.md`, `00_SYSTEM/LEGACY_TERMS.md`).
 - **Suggested owner/approver**: ML1
@@ -203,11 +203,11 @@ Score each backlog item on a 1–5 scale and calculate:
 - **Problem statement**: Outputs are not consistently linked to run records and inputs, reducing auditability and traceability.
 - **Scope**: Rules for linking run IDs, inputs, and outputs across `05_RUNS/` and `06_OUTPUTS/`.
 - **Non-scope**: Does not define run schemas beyond linkage requirements.
-- **Proposed output location(s)**: `01_DOCTRINE/binding/` with references in `05_RUNS/` and `06_OUTPUTS/`.
+- **Proposed output location(s)**: `01_DOCTRINE/` with references in `05_RUNS/` and `06_OUTPUTS/`.
 - **Acceptance criteria**:
   - Doctrine defines required cross-references between run records and outputs.
   - Doctrine defines minimum metadata fields for linkage (run ID, inputs, outputs).
-  - Doctrine defines enforcement points for linkage (template or playbook checks).
+  - Doctrine defines enforcement points for linkage (protocol or model checks).
 - **Dependencies**: Approval semantics doctrine.
 - **Provenance**: Run/output schemas exist but lack binding linkage rules (`00_SYSTEM/SCHEMAS.md`).
 - **Suggested owner/approver**: ML1

@@ -4,7 +4,7 @@ title: Legacy Terminology
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-01-22
+last_updated: 2026-03-01
 tags: [legacy, terminology]
 ---
 
@@ -47,6 +47,20 @@ replaces the term entirely.
 
 **Canonical replacement term:** Execution Environment
 
+### "Playbook"
+Originally referred to procedural operational guidance.
+
+In MooseCoin2026, "Playbook" now functions as a **legacy label** for a
+**Model**.
+
+A Model is a decision engine that includes regime filter, risk model, entry
+logic, exit logic, signal generation, and sizing engine.
+
+All references to "Playbook" should be interpreted as
+"Model (legacy: Playbook)" unless context explicitly indicates historical usage.
+
+**Canonical replacement term:** Model
+
 ### "Client"
 - Appears in: MATTER_SCHEMA.md, matter-template/00_OVERVIEW.md
 - Originally: party receiving legal services
@@ -76,14 +90,14 @@ firm context, but may also have general applicability:
 
 - **"Filing" / "Filings"** — court/administrative submissions; used in matter outputs and extraction protocols
 - **"Intake" / "Triage"** — law firm onboarding vocabulary; used for 09_INBOX/ routing
-- **"Delivery"** (as status/folder concept) — law firm service delivery framing; structures the playbook folder hierarchy
+- **"Delivery"** (as status/folder concept) — law firm service delivery framing; structures the historical playbook folder hierarchy
 - **"Engagement"** — law firm client-relationship lifecycle term
 
 ---
 
 ## Structural / Embedded Legacy
 
-### Playbook taxonomy under 02_PLAYBOOKS/delivery/
+### Historical playbook taxonomy (now under model lineage)
 Contains: corporate/, contract/, franchising/, financial-services/ with
 sub-items like M&A, shareholder-conflict, deadlock, redemption — all law
 firm practice sub-areas.

@@ -1,15 +1,16 @@
 ---
-name: repo-linter
-description: Scans the repository for structural, schema, and naming violations against system rules in FOLDER_MAP.md and PROJECT_SCHEMA.md. Produces a lint report to 09_INBOX/_AGENT_OUTPUT/.
+name: SAA001
+description: System admin agent (legacy: repo-linter). Scans the repository for structural, schema, and naming violations against system rules in FOLDER_MAP.md and PROJECT_SCHEMA.md. Produces a lint report to 09_INBOX/_AGENT_OUTPUT/.
 tools: Read, Glob, Grep, Bash, Write
 disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 ---
 
-# Proto-Agent: repo-linter
+# System Admin Agent: SAA001
 
 ## Identity
 
-- **Name:** repo-linter
+- **Name:** SAA001
+- **Legacy name:** repo-linter
 - **Type:** Proto-agent (advisory only)
 - **Governance:** GOV-2026-006 (Agent Write Guardrail)
 
@@ -87,9 +88,9 @@ Use today's date. If a report for today already exists, append a sequence number
 type: repo_lint_report
 date: YYYY-MM-DD
 scope: full_repo
-agent: repo-linter
+agent: SAA001
 writes_allowed: ["09_INBOX/_AGENT_OUTPUT/"]
-generated_by: repo-linter
+generated_by: SAA001
 generated_on: YYYY-MM-DD
 status: draft
 authority:

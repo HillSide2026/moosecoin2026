@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2026-03-01T00:00:00.000Z" agent="codex" version="24.7.17" type="device">
+  <diagram id="strat3-flow" name="STRAT3 Flow">
+    <mxGraphModel dx="1294" dy="852" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1" value="Regime Filter&#xa;(Session, Macro, Volatility State)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="20" y="140" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="Risk Gate&#xa;(Spread, Liquidity, Slippage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="Spike Engine&#xa;(ATR Multiple, Time Window, Range Violation)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="520" y="140" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="Stall Confirmation Engine&#xa;(Failure to Extend, Compression/Opposing Close)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="810" y="140" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="Entry + Sizing Engine&#xa;(Opposite Spike Direction, Fixed Fractional Risk)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="140" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="Exit Engine&#xa;(Spike Breach, Retracement, Momentum Stall, Time Stop)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f0c6;strokeColor=#b09500;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="Monitoring and Audit&#xa;(Regime, Spike, Spread, Exit Cause, Version)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="140" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="noTrade" value="No Trade / Stand Aside" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n1" target="n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n2" target="n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;" edge="1" parent="1" source="n6" target="n7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="Gate Fail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;dashed=1;" edge="1" parent="1" source="n1" target="noTrade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="Gate Fail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;dashed=1;" edge="1" parent="1" source="n2" target="noTrade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="Invalid Spike" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;dashed=1;" edge="1" parent="1" source="n3" target="noTrade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" value="No Stall Confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;dashed=1;" edge="1" parent="1" source="n4" target="noTrade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

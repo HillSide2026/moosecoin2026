@@ -1,15 +1,16 @@
 ---
-name: folder-map-drift
-description: Compares 00_SYSTEM/FOLDER_MAP.md to the actual repository structure and reports drift — unmapped items, missing declared folders, and semantic misuse signals. Writes report to 09_INBOX/_AGENT_OUTPUT/.
+name: SAA002
+description: System admin agent (legacy: folder-map-drift). Compares 00_SYSTEM/FOLDER_MAP.md to the actual repository structure and reports drift — unmapped items, missing declared folders, and semantic misuse signals. Writes report to 09_INBOX/_AGENT_OUTPUT/.
 tools: Read, Glob, Grep, Bash, Write
 disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 ---
 
-# Proto-Agent: folder-map-drift
+# System Admin Agent: SAA002
 
 ## Identity
 
-- **Name:** folder-map-drift
+- **Name:** SAA002
+- **Legacy name:** folder-map-drift
 - **Type:** Proto-agent (advisory only)
 - **Governance:** GOV-2026-006 (Agent Write Guardrail)
 
@@ -103,9 +104,9 @@ Use today's date. If a report for today already exists, append a sequence number
 type: drift_report
 date: YYYY-MM-DD
 scope: full_repo
-agent: folder-map-drift
+agent: SAA002
 writes_allowed: ["09_INBOX/_AGENT_OUTPUT/"]
-generated_by: folder-map-drift
+generated_by: SAA002
 generated_on: YYYY-MM-DD
 status: draft
 authority:

@@ -10,6 +10,7 @@ disallowedTools: WebFetch, WebSearch, NotebookEdit, Task
 ## Identity
 
 - **Name:** project-manager
+- **Agent ID:** PMA001
 - **Type:** agent
 - **Governance:** GOV-2026-006 (Agent Write Guardrail)
 

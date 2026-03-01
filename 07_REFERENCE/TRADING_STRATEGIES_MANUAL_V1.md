@@ -4,7 +4,7 @@ title: MooseCoin Trading Strategies Manual (v1)
 owner: ML1
 status: draft
 created_date: 2026-02-09
-last_updated: 2026-02-09
+last_updated: 2026-03-01
 tags: [trading, strategy, strategies, manual, layer2]
 ---
 
@@ -18,16 +18,17 @@ tags: [trading, strategy, strategies, manual, layer2]
 
 ## Current Strategy & Playbook Inventory
 
-- **Strategy (active):** `07_REFERENCE/TRADING_STRATEGY1_RANGEBREAKHOLD.md`
-- **Playbook (active):** `02_PLAYBOOKS/TRADING_PLAYBOOK_V2.md`
-- **Playbook (archived):** `10_ARCHIVE/04_PROJECTS/26-001-00001 MooseCoin - Formalize Trading Strategy/TRADING_PLAYBOOK_V1.md`
+- **Strategy (active):** `None (Strategy 1 archived)`
+- **Strategy (archived):** `10_ARCHIVE/07_REFERENCE/TRADING_STRATEGY1_RANGEBREAKHOLD.md`
+- **Playbook (active):** `02_MODELS/TRADING_MODEL_V2.md`
+- **Playbook (archived):** `10_ARCHIVE/04_PROJECTS/MCP-26-001 – Formalize Trading Strategy/TRADING_PLAYBOOK_V1.md`
 
 ## Documentation Inconsistencies (To Resolve)
 
 1. **Playbook location mismatch**  
-   - `04_PROJECTS/26-001-00001 MooseCoin - Formalize Trading Strategy/01_INITIATION DOCUMENTATION/DEFINITIONS.md` and `SCOPE_BOUNDARIES.md` specify playbooks live in `02_PLAYBOOKS/`, but the active playbook is in `04_PROJECTS/**/03_EXECUTION DOCUMENTATION/`.
-2. **Authority language mismatch**  
-   - `TRADING_PLAYBOOK_V2.md` states it is “binding unless superseded,” but playbooks are procedural and non‑binding per system governance.
+   - `04_PROJECTS/MCP-26-001 – Formalize Trading Strategy/01_INITIATION DOCUMENTATION/DEFINITIONS.md` and `SCOPE_BOUNDARIES.md` specify playbooks live in `02_MODELS/`, but the active playbook is in `04_PROJECTS/**/03_EXECUTION DOCUMENTATION/`.
+2. **Authority language mismatch (legacy)**  
+   - Earlier playbook/model drafts used “binding unless superseded” language, but models are procedural and non‑binding per system governance.
 3. **Terminology drift inside this manual**  
    - This is a strategy manual, but Section 11 ends with “No setup may weaken this playbook.” That should likely read “strategy.”
 

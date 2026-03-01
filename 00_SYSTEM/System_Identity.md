@@ -33,7 +33,7 @@ This system is an independent lineage.
 External architectures may be referenced as non-binding inputs.
 No external system defines ML2 behavior or permissions.
 Explicit mapping and ML1 approval are required for any reuse.
-See: `00_SYSTEM/governance/External_Reference_Architectures.md`
+See: `00_SYSTEM/GOVERNANCE/External_Reference_Architectures.md`
 
 ## Agent Visibility Rule
 Agents must treat this file and README.md as authoritative identity sources.

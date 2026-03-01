@@ -259,9 +259,9 @@ All three projects share a critical dependency chain:
 
 | File | Type | Location |
 |------|------|----------|
-| PROJECT_CHARTER.md | Stage 1 Output | `04_PROJECTS/26-001-00001.../05_OUTPUTS/` |
-| SCOPE_BOUNDARIES.md | Stage 1 Output | `04_PROJECTS/26-001-00001.../05_OUTPUTS/` |
-| DEFINITIONS.md | Stage 1 Output | `04_PROJECTS/26-001-00001.../05_OUTPUTS/` |
+| PROJECT_CHARTER.md | Stage 1 Output | `04_PROJECTS/MCP-26-001 – Formalize Trading Strategy.../05_OUTPUTS/` |
+| SCOPE_BOUNDARIES.md | Stage 1 Output | `04_PROJECTS/MCP-26-001 – Formalize Trading Strategy.../05_OUTPUTS/` |
+| DEFINITIONS.md | Stage 1 Output | `04_PROJECTS/MCP-26-001 – Formalize Trading Strategy.../05_OUTPUTS/` |
 
 ### Modified
 

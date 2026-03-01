@@ -1,15 +1,16 @@
 ---
-name: inbox-triage
-description: Scans all items in 09_INBOX/ and produces a triage report proposing destinations, project IDs, and filenames for each item. Writes report to 09_INBOX/_AGENT_OUTPUT/.
+name: SAA003
+description: System admin agent (legacy: inbox-triage). Scans all items in 09_INBOX/ and produces a triage report proposing destinations, project IDs, and filenames for each item. Writes report to 09_INBOX/_AGENT_OUTPUT/.
 tools: Read, Glob, Grep, Bash, Write
 disallowedTools: Edit, WebFetch, WebSearch, NotebookEdit, Task
 ---
 
-# Proto-Agent: inbox-triage
+# System Admin Agent: SAA003
 
 ## Identity
 
-- **Name:** inbox-triage
+- **Name:** SAA003
+- **Legacy name:** inbox-triage
 - **Type:** Proto-agent (advisory only)
 - **Governance:** GOV-2026-006 (Agent Write Guardrail)
 
@@ -106,9 +107,9 @@ Use today's date. If a report for today already exists, append a sequence number
 type: inbox_triage_report
 date: YYYY-MM-DD
 scope: 09_INBOX
-agent: inbox-triage
+agent: SAA003
 writes_allowed: ["09_INBOX/_AGENT_OUTPUT/"]
-generated_by: inbox-triage
+generated_by: SAA003
 generated_on: YYYY-MM-DD
 status: draft
 authority:

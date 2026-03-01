@@ -1,4 +1,4 @@
-es---
+---
 type: inbox_triage_report
 date: 2026-02-09
 scope: 09_INBOX

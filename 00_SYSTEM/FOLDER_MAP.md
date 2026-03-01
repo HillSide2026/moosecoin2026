@@ -4,7 +4,7 @@ title: Folder Map
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-02-09
+last_updated: 2026-03-01
 tags: [structure, folders]
 ---
 
@@ -16,15 +16,19 @@ This document describes the repository as it exists today (descriptive), not an 
 **Purpose:** System governance and mechanics
 
 **Structure:**
-- `/governance/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/, trading/)
-- `/governance/agents/AGENT_REGISTRY.md` — Canonical executable agent registry
-- `/audits/` — Structural and compliance audit reports
-- Key files: AGENT_REGISTRY.md, CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
+- `/GOVERNANCE/` — System-level rules (agents/, authority/, canon/, enforcement/, change-control/, trading/)
+- `/GOVERNANCE/agents/AGENT_REGISTRY.md` — Canonical executable agent registry
+- `/AGENTS/` — Agent specifications and prompt/system-instruction artifacts
+- `/ORCHESTRATION/` — Agent-run workflows, schedules, triggers, and dependency maps
+- `/AUDITS/` — Structural and compliance audit reports
+- Key files: AGENT_REGISTRY.md, AGENTS/README.md, AGENTS/SYSTEM_ADMIN_AGENTS.md, AGENTS/SYSTEM_MANAGEMENT_AGENTS.md, ORCHESTRATION/README.md, CLAUDE.md, DECISION_LOG.md, FOLDER_MAP.md, FOLDER_SCHEMAS.md, GLOSSARY.md, LEGACY_TERMS.md, PROJECT_SCHEMA.md, SCHEMAS.md, SYSTEM_BACKLOG.md, TASK_BACKLOG.md, System_Identity.md
 
 **Rules:**
 - ML1 write-only
 - ML2 read-only
 - Never emitted, summarized, or consumed by LL
+- `AGENTS/` does not contain trading strategy logic or general reference artifacts
+- `ORCHESTRATION/` defines execution coordination, not strategy logic
 
 ---
 
@@ -32,9 +36,14 @@ This document describes the repository as it exists today (descriptive), not an 
 **Purpose:** Authoritative judgment and constraints
 
 **Structure:**
-- `/binding` — Rules that govern behavior
-- `/interpretive` — Guidance, principles
-- `/constraints` — Limits, prohibitions
+- `/01_INVARIANTS` — Hard non-negotiable constraints (`always` / `never`)
+- `/02_PRINCIPLES` — Guiding strategic preferences and tradeoff heuristics
+- `/03_INTERPRETIVE` — Definitions, precedence, and ambiguity resolution
+- `/04_POLICIES` — Enforceable rule sets governing behavior
+- `/05_CAPABILITY_PROFILES` — Permission boundaries by system component
+- `/06_PROTOCOLS` — Standard operating workflows including workflow definition, step sequence, and role responsibilities
+- `/08_RULES` — Machine-readable enforcement logic
+- `/09_TESTS` — Verification layer for doctrine and enforcement behavior
 
 **Rules:**
 - Source-of-truth eligible
@@ -43,30 +52,35 @@ This document describes the repository as it exists today (descriptive), not an 
 
 ---
 
-## 02_PLAYBOOKS/
-**Purpose:** Procedural "how-to" guidance
+## 02_MODELS/
+**Purpose:** Procedural decision engines derived from doctrine
 
 **Structure:**
-- (pending declaration — see Phase 3 Structural Diff Report)
+- Model artifacts by strategy/system domain
 
 **Rules:**
 - Never source-of-truth
 - May be LL-consumable only if metadata allows (`ll_consumable: true`)
 - Must cite Doctrine when relevant
+- Model artifacts must define: regime filter, risk model, entry logic,
+  exit logic, signal generation, and sizing engine
 
 ---
 
-## 03_TEMPLATES/
-**Purpose:** Structured starting points for outputs
+## 03_PROTOCOLS/
+**Purpose:** Operational protocol layer for governed procedures
 
 **Structure:**
-- `/documents` — Document templates
-- `/internal` — Internal-use templates
-- `/checklists` — Checklist templates
+- `/risk` — Risk protocol artifacts
+- `/execution` — Execution protocol artifacts
+- `/incident` — Incident protocol artifacts
+- `/review` — Review protocol artifacts
+- `/documents` — Supporting protocol documents (legacy support)
+- `/internal` — Internal protocol support files
 
 **Rules:**
-- Authoritative only as templates
-- Instantiated outputs are never canon
+- Authoritative as approved protocols
+- Protocol instances in working folders are never canon
 - Versioned and approval-gated
 
 ---
@@ -146,7 +160,7 @@ This document describes the repository as it exists today (descriptive), not an 
 **Rules:**
 - Reference-only
 - No direct emission to LL
-- May inform playbooks/templates
+- May inform models/protocols
 
 ---
 
@@ -184,3 +198,10 @@ The following directories support tooling and are not part of the content struct
 
 - `.claude/` — Claude Code agent definitions and settings
 - `.github/` — GitHub templates and workflows
+
+## Root-Level Allowed Files
+
+Allowed root files:
+- `README.md`
+- `LICENSE`
+- `CLAUDE.md`

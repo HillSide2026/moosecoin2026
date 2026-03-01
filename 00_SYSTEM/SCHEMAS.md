@@ -4,7 +4,7 @@ title: Artifact Schemas
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-02-06
+last_updated: 2026-03-01
 tags: [schemas, metadata]
 ---
 
@@ -12,9 +12,14 @@ tags: [schemas, metadata]
 
 All markdown files in this repository MUST begin with YAML frontmatter.
 
+## Scope of This File
+
+This file defines artifact metadata/frontmatter schemas.
+Folder-level structural schemas are defined in `00_SYSTEM/FOLDER_SCHEMAS.md`.
+
 ## Schema Gate (Frontmatter Enforcement)
 
-The repo-wide gate runs `00_SYSTEM/tools/check_frontmatter.py` against tracked
+The repo-wide gate runs `00_SYSTEM/TOOLS/check_frontmatter.py` against tracked
 markdown files. It fails when frontmatter is missing and prints:
 “Missing YAML frontmatter. Add a frontmatter block per 00_SYSTEM/SCHEMAS.md.”
 There are no frontmatter exemptions unless explicitly listed here.
@@ -42,13 +47,13 @@ How much the artifact can govern behavior.
 |-------|---------|
 | `none` | Cannot guide action (notes, logs) |
 | `reference` | Context only (research, external) |
-| `procedural` | How-to (playbooks/templates) |
+| `procedural` | Decision-engine and protocol logic (models/protocols) |
 | `binding` | Rules/policy (doctrine) |
 
 ### C. authority.source_of_truth
 Can this artifact define truth for the system?
 
-- `true` — Only for canon artifacts that can be cited as "this is the rule/template"
+- `true` — Only for canon artifacts that can be cited as "this is the rule/protocol"
 - `false` — Everything else (including Projects; legacy: Matters)
 
 ### D. audience.scope
@@ -74,31 +79,18 @@ audience: { scope: ml1_only, ll_consumable: false }
 agents: { read: allow, write: deny }
 ```
 
-### 01_DOCTRINE/binding/
+### 01_DOCTRINE/ (all doctrine subdirectories)
 ```yaml
 lifecycle: { folder_class: canon }
 authority: { level: binding, source_of_truth: true }
 audience: { scope: ll_consumable, ll_consumable: true }
 agents: { read: allow, write: deny }
 ```
+*Applies to: `01_INVARIANTS/`, `02_PRINCIPLES/`, `03_INTERPRETIVE/`,
+`04_POLICIES/`, `05_CAPABILITY_PROFILES/`, `06_PROTOCOLS/`,
+`08_RULES/`, `09_TESTS/`.*
 
-### 01_DOCTRINE/interpretive/
-```yaml
-lifecycle: { folder_class: canon }
-authority: { level: binding, source_of_truth: true }
-audience: { scope: ll_consumable, ll_consumable: true }
-agents: { read: allow, write: deny }
-```
-
-### 01_DOCTRINE/constraints/
-```yaml
-lifecycle: { folder_class: canon }
-authority: { level: binding, source_of_truth: true }
-audience: { scope: ll_consumable, ll_consumable: true }
-agents: { read: allow, write: deny }
-```
-
-### 02_PLAYBOOKS/
+### 02_MODELS/
 ```yaml
 lifecycle: { folder_class: canon }
 authority: { level: procedural, source_of_truth: false }
@@ -107,14 +99,14 @@ agents: { read: allow, write: deny }
 ```
 *Note: `ll_consumable: partial` requires per-artifact override.*
 
-### 03_TEMPLATES/
+### 03_PROTOCOLS/
 ```yaml
 lifecycle: { folder_class: canon }
 authority: { level: procedural, source_of_truth: true }
 audience: { scope: ll_consumable, ll_consumable: true }
 agents: { read: allow, write: deny }
 ```
-*Note: Template itself is source-of-truth; instantiated outputs are not.*
+*Note: Protocol artifact is source-of-truth; instantiated outputs are not.*
 
 ### 04_PROJECTS/ (legacy: 04_MATTERS)
 ```yaml
@@ -211,22 +203,31 @@ provenance:
 ---
 ```
 
-### Playbook Schema
-Additional fields for `/02_PLAYBOOKS/`:
+### Model Schema
+Additional fields for `/02_MODELS/`:
 
 ```yaml
 ---
 audience:
   ll_consumable: true | false    # Override partial default
-cites_doctrine: []               # List of doctrine IDs this playbook derives from
+model_type: decision_engine
+model_components:
+  regime_filter: required
+  risk_model: required
+  entry_logic: required
+  exit_logic: required
+  signal_generation: required
+  sizing_engine: required
+cites_doctrine: []               # List of doctrine IDs this model derives from
 ---
 ```
 
-### Template Schema
-Additional fields for `/03_TEMPLATES/`:
+### Protocol Schema
+Additional fields for `/03_PROTOCOLS/`:
 
 ```yaml
 ---
+protocol_type: risk | execution | incident | review
 version: string                  # e.g., "1.0", "2.1"
 approval_status: draft | approved
 ---
@@ -260,31 +261,11 @@ tags: []
 
 **Project Internal Structure:**
 
-```
-04_PROJECTS/{status}/
-└── ##-###-##### Client Name - Description/
-    ├── 00_OVERVIEW.md        # Project summary, parties, key dates
-    ├── 01_FACTS.md           # Factual record (non-normative)
-    ├── 02_RECORDS/           # Source documents
-    │   ├── 02_1_CLIENT_DOCUMENTS/
-    │   └── 02_2_EMAILS/
-    ├── 03_ANALYSIS.md        # Strategic analysis
-    ├── 04_ROADMAP.md         # Timeline, milestones, deliverables
-    ├── 05_OUTPUTS/           # Work product for this project
-    └── 06_ACTIONS.md         # Current and pending action items
-```
+Project folder structure is governed by:
+- `00_SYSTEM/FOLDER_SCHEMAS.md`
+- `00_SYSTEM/PROJECT_SCHEMA.md`
 
-| File/Folder | Purpose |
-|-------------|---------|
-| `00_OVERVIEW.md` | Project summary, parties, scope, key dates |
-| `01_FACTS.md` | Chronological factual record (non-normative) |
-| `02_RECORDS/` | Source documents and communications |
-| `02_1_CLIENT_DOCUMENTS/` | Documents received from or sent to client |
-| `02_2_EMAILS/` | Email correspondence |
-| `03_ANALYSIS.md` | Legal analysis, risk assessment, strategy |
-| `04_ROADMAP.md` | Timeline, milestones, deliverables schedule |
-| `05_OUTPUTS/` | Work product generated for this project |
-| `06_ACTIONS.md` | Current and pending action items |
+This file governs metadata schemas, not folder topology.
 
 ### Run Schema
 For `/05_RUNS/`:
@@ -315,7 +296,7 @@ title:
 status: draft | review | exported
 created_date: YYYY-MM-DD
 last_updated: YYYY-MM-DD
-derived_from: []                 # Source doctrine/playbook/template IDs
+derived_from: []                 # Source doctrine/model/protocol IDs
 audience:
   target: LL | internal | external
 ---

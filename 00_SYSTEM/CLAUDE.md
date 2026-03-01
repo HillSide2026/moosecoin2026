@@ -4,7 +4,7 @@ title: Second Brain — System Boot Instructions
 owner: ML1
 status: approved
 created_date: 2026-01-22
-last_updated: 2026-02-09
+last_updated: 2026-03-01
 tags: [boot, system]
 ---
 
@@ -19,21 +19,22 @@ This repository is a Second Brain system.
 - Do not write outside permitted folders.
 
 ## Agents
-- Agent governance (rules, guardrails) lives in `00_SYSTEM/governance/agents/`.
-- Agent registry (types and classifications) lives in `00_SYSTEM/governance/agents/AGENT_REGISTRY.md`.
+- Agent governance (rules, guardrails) lives in `00_SYSTEM/GOVERNANCE/agents/`.
+- Agent registry (types and classifications) lives in `00_SYSTEM/GOVERNANCE/agents/AGENT_REGISTRY.md`.
+- Agent specs (purpose, allowed actions, inputs/outputs) and prompt/system instructions live in `00_SYSTEM/AGENTS/`.
+- Agent orchestration definitions (run graphs, schedules, dependency maps) live in `00_SYSTEM/ORCHESTRATION/`.
 - Executable agent definitions live in `.claude/agents/`.
-- `00_SYSTEM/AGENTS/` is **deprecated** — do not use.
 - Agents are Markdown files that must be followed exactly when invoked.
 - When asked to "run an agent", open the agent file from `.claude/agents/` and execute its steps.
 
 ## Execution Rules
 - Every non-trivial task must create a Run record in `05_RUNS/`.
-- Do not modify Doctrine or Playbooks without explicit instruction.
+- Do not modify Doctrine, Models, or Protocols without explicit instruction.
 - Prefer writing drafts to `06_OUTPUTS/`.
 
 ## Agent Write Guardrail (Non-Negotiable)
 
-**Binding protocol:** `00_SYSTEM/governance/agents/agent-write-guardrail.md` (GOV-2026-006)
+**Binding protocol:** `00_SYSTEM/GOVERNANCE/agents/agent-write-guardrail.md` (GOV-2026-006)
 
 - Agents may write **only** to `09_INBOX/_AGENT_OUTPUT/`.
 - Approved agent exceptions are defined in GOV-2026-006 and listed in the registry.

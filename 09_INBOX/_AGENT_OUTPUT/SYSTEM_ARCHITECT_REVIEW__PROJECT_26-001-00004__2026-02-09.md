@@ -1,7 +1,7 @@
 ---
 type: review_report
 date: 2026-02-09
-scope: 04_PROJECTS/26-001-00004 MooseCoin - Trading Playbook Refinement
+scope: 04_PROJECTS/MCP-26-004 – Trading Playbook Refinement
 agent: moosecoin2026_system_architect
 writes_allowed: ["09_INBOX/_AGENT_OUTPUT/"]
 generated_by: moosecoin2026_system_architect

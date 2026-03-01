@@ -21,7 +21,7 @@ This repository is a standalone Second Brain system with its own:
 Hard Rules:
 1. All reads and writes must stay within this repository.
 2. Do NOT read from or write to ll-secondbrain or any other repository.
-3. Do NOT assume shared doctrine, templates, or playbooks from other systems.
+3. Do NOT assume shared doctrine, protocols, or models from other systems.
 4. Treat this repository as the sole source of truth for this workspace.
 
 If a request would require:
